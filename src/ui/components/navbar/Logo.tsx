@@ -5,7 +5,7 @@ const Logo = () => {
       <NavLink
         to={"/"}
         className={({ isActive }) =>
-          `${isActive ? "btn-active" : ""} text-xl font-medium`
+          `${isActive ? "btn-active" : ""} text-xl font-medium text-black`
         }
       >
         AdinkraHomes

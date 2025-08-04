@@ -1,24 +1,36 @@
+// Import type for link names and NavLink from react-router-dom
 import type { LinkName } from "../../../../lib/definition";
 import { NavLink } from "react-router-dom";
-const NavLinks = ({ links }: { links: LinkName }) => {
+
+// NavLinks component renders a list of navigation links
+const NavLinks = ({
+  links,
+  flexType,
+  itemsCenter,
+  spacing
+}: {
+  links: LinkName;
+  flexType: string;
+  itemsCenter: string;
+  spacing: string;
+}) => {
   return (
     <div>
-      <ul className="flex items-center">
+      {/* Navigation links list */}
+      <ul className={`flex ${flexType} ${itemsCenter}`}>
         {links.map((link, i) => (
-          <li key={i} className="px-5">
+          // Each link rendered as a list item
+          <li key={i} className={`${spacing} text-base`}>
+            {/* NavLink provides active styling based on route */}
             <NavLink
               to={link.path}
               className={({ isActive }) =>
-                `relative px-2 py-1 transition-colors duration-200
-     ${
-       isActive
-         ? "text-red-500"
-         : `text-gray-800 hover:text-black 
-          after:content-[''] after:absolute after:left-0 after:bottom-0 
-          after:h-[2px] after:bg-black after:w-0 
-          hover:after:w-full after:transition-all after:duration-300`
-     }
-    `
+                `relative px-1 py-1 transition-colors duration-200 text-base
+                ${
+                  isActive
+                    ? "text-red-500 bg-[#d9d9d9] rounded-md"
+                    : `text-black hover:bg-[#d9d9d9] rounded-md`
+                }`
               }
             >
               {link.name}
