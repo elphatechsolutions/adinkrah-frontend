@@ -33,7 +33,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
       {show && (
         <div
-          className={`fixed top-0 left-0 z-50 h-screen w-64 p-4 shadow-md bg-[#d9d9d9] transition-transform duration-100 ease-in-out transform
+          className={`fixed top-0 left-0 z-50 h-screen w-70 p-4 shadow-md bg-[#d9d9d9] transition-transform duration-100 ease-in-out transform
             ${isOpen ? "translate-x-0" : "-translate-x-full"}
             md:static md:translate-x-0 md:block`}
         >
