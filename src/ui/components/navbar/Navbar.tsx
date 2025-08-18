@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
+import { MdOutlineVerticalDistribute } from "react-icons/md";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
-import Search from "./Search";
-import Dropdown from "./Dropdown";
 import { linkNames } from "../../../../lib/utils";
+import Cart from "./Cart";
+import Account from "./Account";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,29 +30,27 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div>
-      <div className="bg-white navbar flex justify-between items-center w-auto md:max-w-3xl lg:max-w-4xl md:mt-10 mt-0 mx-auto p-3 top-0">
-        {/* Left: Hamburger + Logo */}
-        <div className="flex items-center gap-2">
+    <>
+      <div
+        className="fixed w-full bg-[#d9d9d9] top-0 z-50 p-5 bg-brand m-0 flex justify-between items-center 
+                md:sticky md:top-0 md:bg-white md:mx-auto md:mt-10 md:w-[95%] lg:w-[80%] lg:mx-auto"
+      >
+        {/* Left: Hamburger + Logo small screens only */}
+        <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen((prev) => !prev)}
             className="md:hidden cursor-pointer"
           >
-            {isOpen ? (
-              <RxCross1 className="w-7 h-7" />
-            ) : (
-              <RxHamburgerMenu className="w-7 h-7" />
-            )}
+            <MdOutlineVerticalDistribute className="w-7 h-7" />
           </button>
+        </div>
+
+        {/* Middle: Logo small screens only */}
+        <div className="flex justify-center">
           <Logo />
         </div>
 
-        {/* Middle: Search bar on medium screens */}
-        <div className="hide-below-530 hide-md-up">
-          <Search searchStyles="none" />
-        </div>
-
-        {/* Right: NavLinks (desktop only) */}
+        {/*Middle NavLinks (desktop only) */}
         <div className="hidden md:block">
           <NavLinks
             spacing="px-5"
@@ -61,13 +59,16 @@ const Navbar = () => {
             itemsCenter="items-center"
           />
         </div>
-
-        <Dropdown />
+        {/* Call to action on small all screens */}
+        <div className="flex items-center gap-2">
+          <Cart />
+          <Account />
+        </div>
       </div>
 
       {/* Sidebar (mobile only) */}
       <Sidebar isOpen={isOpen} onClose={() => setIsOpen(false)} />
-    </div>
+    </>
   );
 };
 

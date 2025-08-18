@@ -1,11 +1,13 @@
 import { NavLink } from "react-router-dom";
 const Logo = () => {
   return (
-    <div className="flex items-center">
+    <div>
       <NavLink
         to={"/"}
         className={({ isActive }) =>
-          `${isActive ? "btn-active" : ""} text-xl font-medium text-black`
+          `${
+            isActive ? "btn-active" : ""
+          } text-xl font-medium text-black font-bold`
         }
       >
         AdinkraHomes

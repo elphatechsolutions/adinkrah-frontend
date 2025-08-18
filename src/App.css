@@ -1,17 +1,21 @@
+/* @import "tailwindcss/preflight";
+@tailwind utilities; */
+@import url("./fonts.css");
 @import "tailwindcss";
-@plugin "daisyui";
 
-html {
-  scroll-behavior: smooth;
+:root {
+  --font-family-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Example custom media query (optional) */
 @media (max-width: 529px) {
   .hide-below-530 {
     display: none;
   }
 }
-@media (min-width: 768px) {
-  .hide-md-up {
-    display: none;
-  }
+
+body::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -7,7 +7,7 @@ const NavLinks = ({
   links,
   flexType,
   itemsCenter,
-  spacing
+  spacing,
 }: {
   links: LinkName;
   flexType: string;
@@ -25,11 +25,9 @@ const NavLinks = ({
             <NavLink
               to={link.path}
               className={({ isActive }) =>
-                `relative px-1 py-1 transition-colors duration-200 text-base
+                `relative transition-colors border-none w-full outline-none duration-200 text-base
                 ${
-                  isActive
-                    ? "text-red-500 bg-[#d9d9d9] rounded-md"
-                    : `text-black hover:bg-[#d9d9d9] rounded-md`
+                  isActive ? "text-red-500 font-bold" : `text-black font-light`
                 }`
               }
             >
