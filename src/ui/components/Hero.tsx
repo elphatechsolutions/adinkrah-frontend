@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <div className="bg-[#d9d9d9] h-screen absolute top-0 w-full -z-50"></div>
+    <div className="hero bg-[#d9d9d9] md:h-[60vh] lg:h-screen absolute top-0 w-full z-10 h-[60vh]"></div>
   );
 };
 

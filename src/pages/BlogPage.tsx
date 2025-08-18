@@ -1,5 +1,11 @@
+import Pagewrapper from "./Pagewrapper";
+
 const BlogPage = () => {
-  return <div>I am the blog page</div>;
+  return (
+    <Pagewrapper>
+      <div>I am the blog page</div>
+    </Pagewrapper>
+  );
 };
 
 export default BlogPage;

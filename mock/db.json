@@ -1,0 +1,234 @@
+{
+  "steps": [
+    {
+      "id": "01",
+      "step": "Step-01",
+      "title": "Discover Your Options",
+      "description": "Begin by exploring a carefully curated range of funeral services — from traditional burials to modern memorials."
+    },
+    {
+      "id": "02",
+      "step": "Step-02",
+      "title": "Customize What Matters",
+      "description": "Select the services that reflect your loved one's wishes. You can personalize elements like venue, music, clergy, or transport."
+    },
+    {
+      "id": "03",
+      "step": "Step-03",
+      "title": "Confirm and Book Securely",
+      "description": "Book the services that best fit your needs through our secure platform. We ensure full documentation from start to finish."
+    },
+    {
+      "id": "04",
+      "step": "Step-04",
+      "title": "Let Us Coordinate the Details",
+      "description": "Once confirmed, we work closely with our trusted providers to manage every detail. You'll receive updates and guidance throughout."
+    }
+  ],
+  "arrangement": [
+    {
+      "img": "/img-placeholder1.webp",
+      "alt": "funeral services",
+      "loading": "lazy",
+      "name": "Funeral Service"
+    },
+    {
+      "img": "/img-placeholder1.webp",
+      "alt": "Flowers & Gift",
+      "loading": "lazy",
+      "name": "Flowers & Gift"
+    },
+    {
+      "img": "/img-placeholder1.webp",
+      "alt": "Hearse Services",
+      "loading": "lazy",
+      "name": "Hearse Services"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "quote": "This service transformed our workflow! The team is incredibly responsive and the results speak for themselves. Highly recommend for any business looking to innovate.",
+      "author": "Jane Doe",
+      "title": "CEO, Tech Solutions Inc.",
+      "image": "https://placehold.co/120x120/A78BFA/ffffff?text=JD"
+    },
+    {
+      "id": 2,
+      "quote": "An absolute game-changer. The intuitive design and powerful features have made our daily tasks much more efficient. We couldn't be happier with the outcome.",
+      "author": "John Smith",
+      "title": "Marketing Director, Creative Minds",
+      "image": "https://placehold.co/120x120/38B2AC/ffffff?text=JS"
+    },
+    {
+      "id": 3,
+      "quote": "From concept to execution, the journey was seamless. Their expertise and dedication are evident in every detail. Truly a professional and impactful experience.",
+      "author": "Emily White",
+      "title": "Founder, Global Innovations",
+      "image": "https://placehold.co/120x120/FBBF24/ffffff?text=EW"
+    },
+    {
+      "id": 4,
+      "quote": "Outstanding support and an excellent product. It has significantly boosted our productivity and client satisfaction. A must-have for modern businesses.",
+      "author": "Michael Brown",
+      "title": "Operations Manager, Future Forward",
+      "image": "https://placehold.co/120x120/60A5FA/ffffff?text=MB"
+    },
+    {
+      "id": 5,
+      "quote": "The best decision we made! Their innovative approach and dedication to quality are truly remarkable. Our business has seen significant growth.",
+      "author": "Sarah Johnson",
+      "title": "Product Manager, Innovate Corp.",
+      "image": "https://placehold.co/120x120/EF4444/ffffff?text=SJ"
+    },
+    {
+      "id": 6,
+      "quote": "Exceptional service from start to finish. They truly understand client needs and deliver beyond expectations. A highly reliable partner.",
+      "author": "David Lee",
+      "title": "Director of Sales, Growth Hub",
+      "image": "https://placehold.co/120x120/8B5CF6/ffffff?text=DL"
+    }
+  ],
+  "shop": [
+    {
+      "id": 1,
+      "productName": "Ashanti Kente Cloth",
+      "price": 120.0,
+      "quantity": 10,
+      "img": "../public/img-placeholder.webp"
+    },
+    {
+      "id": 2,
+      "productName": "Adinkra Symbol Shirt",
+      "price": 45.99,
+      "quantity": 25,
+      "img": "../public/img-placeholder.webp"
+    },
+    {
+      "id": 3,
+      "productName": "African Drum",
+      "price": 80.5,
+      "quantity": 5,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 4,
+      "productName": "Traditional Beaded Necklace",
+      "price": 30.0,
+      "quantity": 15,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 5,
+      "productName": "Hand-Carved Stool",
+      "price": 150.0,
+      "quantity": 3,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 6,
+      "productName": "Adinkra Wall Art",
+      "price": 70.0,
+      "quantity": 12,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 7,
+      "productName": "Fugu Shirt",
+      "price": 55.0,
+      "quantity": 20,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 8,
+      "productName": "Calabash Bowl Set",
+      "price": 35.0,
+      "quantity": 18,
+      "img": "../public/img-placeholder.webp"
+    },
+    {
+      "id": 9,
+      "productName": "Gye Nyame Pendant",
+      "price": 25.5,
+      "quantity": 40,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 10,
+      "productName": "African Print Bag",
+      "price": 60.0,
+      "quantity": 8,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 11,
+      "productName": "Cultural Fan",
+      "price": 18.0,
+      "quantity": 50,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 12,
+      "productName": "Handwoven Basket",
+      "price": 40.0,
+      "quantity": 22,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 13,
+      "productName": "Royal Headwrap",
+      "price": 28.0,
+      "quantity": 35,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 14,
+      "productName": "Ancestral Mask",
+      "price": 95.0,
+      "quantity": 7,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 15,
+      "productName": "Palm Wine Cup Set",
+      "price": 22.0,
+      "quantity": 13,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 16,
+      "productName": "Symbolic Walking Stick",
+      "price": 85.0,
+      "quantity": 4,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 17,
+      "productName": "African Leather Sandals",
+      "price": 50.0,
+      "quantity": 16,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 18,
+      "productName": "Traditional Fan Drum",
+      "price": 110.0,
+      "quantity": 6,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 19,
+      "productName": "Eban Wooden Sculpture",
+      "price": 130.0,
+      "quantity": 9,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 20,
+      "productName": "African Incense Pack",
+      "price": 12.5,
+      "quantity": 60,
+      "img": "/img-placeholder.webp"
+    }
+  ]
+}
