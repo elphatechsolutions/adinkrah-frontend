@@ -1,10 +1,11 @@
 import ArrangementCards from "./ArrangementCards";
 import Heading from "./Heading";
-import HomeCard from "./HomeCard";
 
 const Arrangement = () => {
   return (
-    <HomeCard view="flex-col">
+    <div
+      className={`w-[95%] mt-10 lg:mt-30 mx-auto flex flex-col justify-center`}
+    >
       <Heading
         heading="Funeral Arrangements Made Simple"
         size="lg:text-4xl xl:text-6xl md:text-4xl"
@@ -14,10 +15,9 @@ const Arrangement = () => {
         Let us help you honor your loved one in a way that feels right{" "}
         <span className="inline-block lg:block">for you and your family.</span>
       </p>
-      <div>
-        <ArrangementCards />
-      </div>
-    </HomeCard>
+      <ArrangementCards />
+    </div>
+
   );
 };
 

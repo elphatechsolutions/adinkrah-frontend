@@ -29,7 +29,7 @@ const Steps = () => {
               key={step.id}
               className={`
                 relative
-                p-6
+                md:p-6 lg:p-6
                 ${isLeftCol ? "md:border-r-2 md:border-gray-300" : ""}
                 ${isTopRow ? "md:border-b-2 md:border-gray-300" : ""}
               `}
