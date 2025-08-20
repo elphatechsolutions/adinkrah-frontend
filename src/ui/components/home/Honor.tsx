@@ -17,7 +17,7 @@ const Honor = () => {
         size="lg:text-4xl xl:text-6xl md:text-4xl"
       />
 
-      <div className="flex flex-col justify-between">
+      <div className="flex flex-col justify-between my-10">
         <div className="w-full lg:w-[80%] md:w-[70%]">
           <p>
             No two lives are the same — and neither should their farewells be.
@@ -32,7 +32,7 @@ const Honor = () => {
           </p>
         </div>
 
-        <ul className="w-[80%] lg:w-[70%] md:w-[70%] mt-5 space-y-3">
+        <ul className="w-[80%] lg:w-full md:w-[70%] mt-5 space-y-3">
           {services.map((row, rowIndex) => (
             <li key={rowIndex} className="flex justify-between">
               {row.map((item, index) => (

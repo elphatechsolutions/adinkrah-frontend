@@ -58,13 +58,15 @@ export default function FAQ() {
   };
 
   return (
-    <div className="mt-20 h-auto flex items-center justify-center font-sans">
-      <div className="w-[90%] lg:w-[83%] bg-white rounded-2xl md:p-10">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-8 sm:mb-12">
+    <div
+      className={`w-[95%] mt-10 lg:mt-30 mx-auto flex flex-col justify-center`}
+    >
+      <div className="w-[95%] mx-auto lg:w-[100%] md:w-[95%] md:mx-auto bg-white rounded-2xl">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
           Frequently Asked Questions
         </h2>
 
-        <div className="space-y-4">
+        <div className="space-y-4 flex-col lg:flex-row">
           {faqData.map((item) => (
             <div
               key={item.id}
@@ -80,9 +82,8 @@ export default function FAQ() {
                   {item.question}
                 </span>
                 <svg
-                  className={`w-6 h-6 text-indigo-600 transform transition-transform duration-300 ${
-                    openFAQId === item.id ? "rotate-180" : ""
-                  }`}
+                  className={`w-6 h-6 text-indigo-600 transform transition-transform duration-300 ${openFAQId === item.id ? "rotate-180" : ""
+                    }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

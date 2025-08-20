@@ -125,9 +125,9 @@ export default function Testimonials() {
   }
 
   return (
-    <div className="h-auto flex items-center justify-center font-sans p-4 sm:p-6 lg:p-8">
-      <div className="relative w-full lg:w-[82%] mx-auto rounded-2xl p-6 sm:p-8 md:p-10 bg-[#d9d9d9] shadow-inner">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-8 sm:mb-12">
+    <div className="mt-10 lg:mt-30 h-auto flex items-center justify-center font-sans p-3 sm:p-4 lg:p-4">
+      <div className="relative w-full lg:w-[82%] mx-auto rounded-2xl p-6 sm:p-8 md:p-10 bg-[#d9d9d9]">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
           Testimonials
         </h2>
 
@@ -222,10 +222,10 @@ export default function Testimonials() {
               className={`block w-3 h-3 rounded-full transition-all duration-300 ${
                 // Highlight the dot if its corresponding testimonial is visible
                 currentIndex === index ||
-                (isLargeScreen && currentIndex + 1 === index)
+                  (isLargeScreen && currentIndex + 1 === index)
                   ? "bg-indigo-600 scale-125"
                   : "bg-gray-300 hover:bg-gray-400"
-              }`}
+                }`}
               aria-label={`Go to testimonial ${index + 1}`}
             ></button>
           ))}

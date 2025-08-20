@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 const HomeCard = ({
   children,
-  width = "w-[90%] lg:w-[80%]",
+  width = "w-[95%] lg:w-[80%]",
   bg,
   view,
 }: {
@@ -14,7 +14,7 @@ const HomeCard = ({
 }) => {
   return (
     <div
-      className={`mt-10 ${width} ${bg} mx-auto flex ${view} justify-center gap-y-5`}
+      className={`mt-10 ${width} ${bg} mx-auto flex ${view} justify-center`}
     >
       {children}
     </div>

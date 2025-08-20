@@ -23,8 +23,10 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
       document.body.style.overflow = "unset"; // Re-enable scroll when closed
       return () => clearTimeout(timeout);
     }
+  
   }, [isOpen]);
 
+  
   useEffect(() => {
     // The handleOutsideClick function is defined here
     const handleOutsideClick = (event: MouseEvent) => {
@@ -36,6 +38,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
         onClose();
       }
     };
+    
 
     if (isOpen) {
       // Add a small delay before attaching the listener to avoid the race condition
