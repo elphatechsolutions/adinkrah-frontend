@@ -26,7 +26,9 @@ const HomePage = () => {
       <div className="flex flex-col lg:gap-10 lg:w-[80%] w-full mx-auto">
         <FAQ />
       </div>
-      <Reflections />
+      <div className="flex flex-col lg:gap-10 lg:w-[80%] w-full mx-auto">
+        <Reflections />
+      </div>
     </Pagewrapper>
   );
 };

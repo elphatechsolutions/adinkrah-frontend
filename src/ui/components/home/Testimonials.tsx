@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Heading from "./Heading";
 
 // Define the TestimonialData interface directly in this file
 interface TestimonialData {
@@ -127,10 +128,7 @@ export default function Testimonials() {
   return (
     <div className="mt-10 lg:mt-30 h-auto flex items-center justify-center font-sans p-3 sm:p-4 lg:p-4">
       <div className="relative w-full lg:w-[82%] mx-auto rounded-2xl p-6 sm:p-8 md:p-10 bg-[#d9d9d9]">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
-          Testimonials
-        </h2>
-
+        <Heading heading="Testimonials" size="lg:text-4xl xl:text-6xl md:text-4xl" position="text-center" />
         {/* Testimonial Display Area - Inner container to hold the sliding testimonials */}
         <div className="overflow-hidden rounded-lg">
           <div

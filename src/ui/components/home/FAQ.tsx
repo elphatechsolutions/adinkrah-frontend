@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Heading from "./Heading";
 
 // Define the interface for a single FAQ item
 interface FAQItem {
@@ -61,12 +62,11 @@ export default function FAQ() {
     <div
       className={`w-[95%] mt-10 lg:mt-30 mx-auto flex flex-col justify-center`}
     >
-      <div className="w-[95%] mx-auto lg:w-[100%] md:w-[95%] md:mx-auto bg-white rounded-2xl">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
-          Frequently Asked Questions
-        </h2>
+      <div className="w-full mx-auto lg:w-[100%] md:w-full md:mx-auto bg-white rounded-2xl">
+        <Heading heading="Frequently Asked Questions" size="lg:text-4xl xl:text-6xl md:text-4xl" position="text-center" />
 
-        <div className="space-y-4 flex-col lg:flex-row">
+
+        <div className="space-y-4 flex-col lg:flex-row mt-10">
           {faqData.map((item) => (
             <div
               key={item.id}
@@ -102,7 +102,7 @@ export default function FAQ() {
                   id={`faq-answer-${item.id}`}
                   role="region"
                   aria-labelledby={`faq-question-${item.id}`}
-                  className="p-4 bg-white text-gray-700 border-t border-gray-200 animate-fadeIn"
+                  className="p-4 bg-white text-black border-t border-gray-200 animate-fadeIn"
                 >
                   <p>{item.answer}</p>
                 </div>
