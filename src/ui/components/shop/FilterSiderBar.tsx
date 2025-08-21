@@ -6,21 +6,27 @@ import { IoFilter } from "react-icons/io5";
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
+  variant: "mobile" | "desktop";
 }
 
-const FilterSideBar = ({ isOpen, onClose }: SidebarProps) => {
+
+const FilterSideBar = ({ isOpen, onClose, variant }: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
 
-  // Lock body scroll when sidebar is open
+  // Handle body scroll lock only on mobile
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "unset";
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
+    if (variant === "mobile") {
+      document.body.style.overflow = isOpen ? "hidden" : "unset";
+      return () => {
+        document.body.style.overflow = "unset";
+      };
+    }
+  }, [isOpen, variant]);
 
-  // Handle outside clicks to close sidebar
+  // Handle outside clicks only for mobile
   useEffect(() => {
+    if (variant !== "mobile") return;
+
     const handleOutsideClick = (event: MouseEvent) => {
       if (
         sidebarRef.current &&
@@ -36,37 +42,62 @@ const FilterSideBar = ({ isOpen, onClose }: SidebarProps) => {
         document.removeEventListener("mousedown", handleOutsideClick);
       };
     }
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, variant]);
 
-  return (
-    <>
-      {/* Background overlay */}
-      {isOpen && (
-        <div className="fixed inset-0 bg-opacity-40 z-40" onClick={onClose} />
-      )}
+  if (variant === "mobile") {
+    return (
+      <>
+        {isOpen && (
+          <div className="fixed inset-0 bg-opacity-40 z-20" onClick={onClose} />
+        )}
 
-      {/* Sidebar panel */}
-      <div
-        ref={sidebarRef}
-        onClick={(e) => e.stopPropagation()} // Prevent bubbling to overlay
-        className={`fixed bg-[#d9d9d9] shadow top-0 left-0 z-40 h-screen w-4/5 p-4 transition-transform duration-300 ease-out transform
-          ${isOpen ? "translate-x-0" : "-translate-x-full"}
-          md:static md:translate-x-0 md:block`}
-      >
-        <div className="flex w-full justify-between items-center">
-          <div className="flex items-center gap-2 font-bold">
-            {" "}
-            <span className="mr-1 font-bold">
-              <IoFilter />
-            </span>
-            <span className="text-sm">FILTER</span>
+        <div
+          ref={sidebarRef}
+          className={`fixed top-0 left-0 w-[80%] h-full bg-white z-40 shadow-lg transition-transform duration-300 transform ${isOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
+        >
+          <div className="flex justify-between items-center p-5 bg-[#d9d9d9]">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">
+                <IoFilter />
+              </span>
+              <span className="text-base font-semibold">FILTER</span>
+            </div>
+            <Close onClose={onClose} />
           </div>
-          <Close onClose={onClose} />
+          <div className="p-5">
+            <form className="w-full flex justify-between border-b border-black">
+              <input
+                type="text"
+                placeholder="search"
+                className="outline-0 border-none w-full"
+              />
+              <button type="submit">&#128269;</button>
+            </form>
+            <FilterLinks />
+          </div>
         </div>
+      </>
+    );
+  }
+
+  // Desktop sidebar (always visible)
+  if (variant === "desktop") {
+    return (
+      <div ref={sidebarRef} className="p-5 w-full">
+        <form className="w-full flex justify-between border-b border-black mb-4">
+          <input
+            type="text"
+            placeholder="search"
+            className="outline-0 border-none w-full"
+          />
+          <button type="submit">&#128269;</button>
+        </form>
         <FilterLinks />
       </div>
-    </>
-  );
+    );
+  }
 };
 
-export default FilterSideBar;
+
+export default FilterSideBar

@@ -19,3 +19,17 @@ body::-webkit-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.filterSideBar {
+  overflow: scroll;
+  /* Optional: ensures the scrollbar is always there to be hidden */
+  scrollbar-width: none;
+  /* For Firefox */
+  -ms-overflow-style: none;
+  /* For Internet Explorer and Edge */
+}
+
+.filterSideBar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

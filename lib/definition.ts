@@ -1,3 +1,5 @@
+export type DateInput = Date | string | number;
+
 interface Route {
   path: string;
   page: React.ComponentType<any>;
@@ -31,6 +33,13 @@ export interface Shop {
   quantity: number;
   image: string;
 }
+
+export interface FAQItem {
+  id: number;
+  question: string;
+  answer: string;
+}
+
 
 export type SideBarLinksType = Array<{
   categories: {
@@ -98,7 +107,28 @@ interface Testimonial {
   image: string;
 }
 
+export interface BlogType {
+  id: number
+  title: string
+  content: string
+  tag: string
+  author: {
+    id: number
+    name: string
+    relation: string
+  },
+  tags: []
+  likes: number
+  img: string
+  created_at: Date
+
+}
+
 export type TestimonialData = Testimonial[];
+
+export type BlogData = BlogType[]
+
+export type FAQData = FAQItem[]
 
 export type ShopData = Shop[];
 

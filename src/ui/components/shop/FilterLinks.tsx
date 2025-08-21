@@ -13,15 +13,14 @@ const FilterSidebar = () => {
     paths: Record<string, string>
   ) => (
     <div className="mb-6">
-      <h3 className="text-lg font-semibold mb-3">{title}</h3>
+      <h3 className="text-lg font-semibold mb-3 md:text-sm lg:text-lg">{title}</h3>
       <ul className="flex flex-col gap-2">
         {Object.entries(labels).map(([key, label]) => (
           <li key={key}>
             <NavLink
               to={paths[key]}
               className={({ isActive }) =>
-                `block py-1 rounded-md transition-colors hover:text-gray-950 ${
-                  isActive ? "bg-red-500 text-white font-bold" : "text-gray-400"
+                `block py-1 rounded-md transition-colors hover:text-gray-950 ${isActive ? "bg-red-500 text-white font-bold" : "text-gray-400"
                 }`
               }
             >
@@ -35,7 +34,7 @@ const FilterSidebar = () => {
 
   return (
     <aside
-      className="overflow-y-auto h-screen p-4 mb-10"
+      className="overflow-y-auto h-screen text-base md:text-[12px] lg:text-lg my-10"
       style={{ maxHeight: "100vh", scrollbarWidth: "none" }}
     >
       {" "}
@@ -64,11 +63,13 @@ const FilterSidebar = () => {
         filters.packageType.package,
         filters.packageType.packagePaths
       )}
-      {renderSection(
-        filters.Vendors.name,
-        filters.Vendors.vendors,
-        filters.Vendors.vendorPaths
-      )}
+      <div className="mb-50">
+        {renderSection(
+          filters.Vendors.name,
+          filters.Vendors.vendors,
+          filters.Vendors.vendorPaths
+        )}
+      </div>
     </aside>
   );
 };

@@ -7,7 +7,7 @@ const Logo = () => {
         className={({ isActive }) =>
           `${
             isActive ? "btn-active" : ""
-          } text-xl font-medium text-black font-bold`
+          } text-xl text-black font-bold`
         }
       >
         AdinkraHomes

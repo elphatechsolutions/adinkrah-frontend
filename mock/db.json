@@ -215,20 +215,38 @@
       "price": 110.0,
       "quantity": 6,
       "img": "/img-placeholder.webp"
+    }
+  ],
+  "faq": [
+    {
+      "id": 1,
+      "question": "How do I get started with your services?",
+      "answer": "Getting started is easy! Simply visit our 'Services' page, choose the plan that best fits your needs, and follow the on-screen instructions. You can also contact our sales team for a personalized consultation."
     },
     {
-      "id": 19,
-      "productName": "Eban Wooden Sculpture",
-      "price": 130.0,
-      "quantity": 9,
-      "img": "/img-placeholder.webp"
+      "id": 2,
+      "question": "What payment methods do you accept?",
+      "answer": "We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, and bank transfers for annual subscriptions. For enterprise clients, custom invoicing options are available."
     },
     {
-      "id": 20,
-      "productName": "African Incense Pack",
-      "price": 12.5,
-      "quantity": 60,
-      "img": "/img-placeholder.webp"
+      "id": 3,
+      "question": "Can I upgrade or downgrade my plan later?",
+      "answer": "Absolutely! You can upgrade or downgrade your plan at any time through your account dashboard. Changes will be prorated and applied to your next billing cycle."
+    },
+    {
+      "id": 4,
+      "question": "Do you offer customer support?",
+      "answer": "Yes, we offer 24/7 customer support via live chat, email, and phone for all our paid plans. Basic users have access to our comprehensive knowledge base and community forum."
+    },
+    {
+      "id": 5,
+      "question": "What is your refund policy?",
+      "answer": "We offer a 30-day money-back guarantee for all new subscriptions. If you're not satisfied within the first 30 days, simply contact us for a full refund, no questions asked."
+    },
+    {
+      "id": 6,
+      "question": "Is my data secure with your service?",
+      "answer": "Data security is our top priority. We use industry-standard encryption, regular security audits, and comply with all relevant data protection regulations (e.g., GDPR, CCPA) to ensure your data is safe and private."
     }
   ],
   "blog": [
@@ -236,10 +254,18 @@
       "id": 1,
       "title": "In Loving Memory of Margaret Smith",
       "content": "We are deeply saddened to announce the passing of Margaret Smith, a beloved mother and grandmother. A memorial service will be held at Grace Church on August 20th, 2025, at 2:00 PM.",
-      "author": { "id": 101, "name": "Smith Family", "relation": "Family" },
-      "tags": ["announcement", "memorial"],
+      "author": {
+        "id": 101,
+        "name": "Smith Family",
+        "relation": "Family"
+      },
+      "tags": [
+        "announcement",
+        "memorial"
+      ],
+      "tag": "greiving",
       "likes": 15,
-      "image_url": "https://example.com/images/margaret-smith.jpg",
+      "img": "/img-placeholder1.webp",
       "created_at": "2025-08-14T14:23:00Z"
     },
     {
@@ -251,9 +277,13 @@
         "name": "Friends of James",
         "relation": "Friends"
       },
-      "tags": ["tribute", "celebration"],
+      "tags": [
+        "tribute",
+        "celebration"
+      ],
       "likes": 27,
-      "image_url": "https://example.com/images/james-carter.jpg",
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
       "created_at": "2025-08-15T16:40:00Z"
     },
     {
@@ -265,49 +295,84 @@
         "name": "Community Church",
         "relation": "Organization"
       },
-      "tags": ["condolence", "community"],
+      "tags": [
+        "condolence",
+        "community"
+      ],
       "likes": 9,
-      "image_url": "https://example.com/images/daniel-lee.jpg",
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
       "created_at": "2025-08-16T10:05:00Z"
     },
     {
       "id": 4,
       "title": "Celebrating the Life of Mary Johnson",
       "content": "Mary was a kind soul who dedicated her life to helping others. A celebration of her life will be held at Riverside Hall on August 30th.",
-      "author": { "id": 104, "name": "Johnson Family", "relation": "Family" },
-      "tags": ["announcement", "celebration"],
+      "author": {
+        "id": 104,
+        "name": "Johnson Family",
+        "relation": "Family"
+      },
+      "tags": [
+        "announcement",
+        "celebration"
+      ],
       "likes": 22,
-      "image_url": "https://example.com/images/mary-johnson.jpg",
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
       "created_at": "2025-08-16T18:22:00Z"
     },
     {
       "id": 5,
       "title": "Memorial Gathering for Robert White",
       "content": "Friends and family are invited to join us in remembering Robert at a gathering on September 2nd at Oakwood Cemetery.",
-      "author": { "id": 105, "name": "White Family", "relation": "Family" },
-      "tags": ["memorial", "announcement"],
+      "author": {
+        "id": 105,
+        "name": "White Family",
+        "relation": "Family"
+      },
+      "tags": [
+        "memorial",
+        "announcement"
+      ],
       "likes": 18,
-      "image_url": "https://example.com/images/robert-white.jpg",
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
       "created_at": "2025-08-17T09:45:00Z"
     },
     {
       "id": 6,
       "title": "Condolence Message for the Garcia Family",
       "content": "We extend our deepest condolences to the Garcia family during this difficult time. May their memories bring comfort and peace.",
-      "author": { "id": 106, "name": "Sarah Thompson", "relation": "Friend" },
-      "tags": ["condolence"],
+      "author": {
+        "id": 106,
+        "name": "Sarah Thompson",
+        "relation": "Friend"
+      },
+      "tags": [
+        "condolence"
+      ],
       "likes": 11,
-      "image_url": "https://example.com/images/garcia-family.jpg",
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
       "created_at": "2025-08-17T13:20:00Z"
     },
     {
       "id": 7,
       "title": "Honoring the Life of Peter Adams",
       "content": "Peter Adams will be remembered for his dedication to the community and his warm spirit. A memorial service will be held on September 5th.",
-      "author": { "id": 107, "name": "Adams Family", "relation": "Family" },
-      "tags": ["memorial", "tribute"],
+      "author": {
+        "id": 107,
+        "name": "Adams Family",
+        "relation": "Family"
+      },
+      "tags": [
+        "memorial",
+        "tribute"
+      ],
       "likes": 31,
-      "image_url": "https://example.com/images/peter-adams.jpg",
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
       "created_at": "2025-08-18T08:55:00Z"
     },
     {
@@ -319,29 +384,49 @@
         "name": "Local Community",
         "relation": "Community"
       },
-      "tags": ["condolence", "support"],
+      "tags": [
+        "condolence",
+        "support"
+      ],
       "likes": 7,
-      "image_url": "https://example.com/images/grace-williams.jpg",
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
       "created_at": "2025-08-18T12:14:00Z"
     },
     {
       "id": 9,
       "title": "Celebrating the Memory of Helen Brown",
       "content": "Helen will always be remembered for her laughter and kindness. A celebration of life service will be held on September 10th.",
-      "author": { "id": 109, "name": "Brown Family", "relation": "Family" },
-      "tags": ["celebration", "memorial"],
+      "author": {
+        "id": 109,
+        "name": "Brown Family",
+        "relation": "Family"
+      },
+      "tags": [
+        "celebration",
+        "memorial"
+      ],
       "likes": 19,
-      "image_url": "https://example.com/images/helen-brown.jpg",
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
       "created_at": "2025-08-18T15:45:00Z"
     },
     {
       "id": 10,
       "title": "Tribute Wall for David Thompson",
       "content": "Friends are invited to share memories and tributes in honor of David Thompson, whose presence will be deeply missed.",
-      "author": { "id": 110, "name": "Thompson Family", "relation": "Family" },
-      "tags": ["tribute", "guestbook"],
+      "author": {
+        "id": 110,
+        "name": "Thompson Family",
+        "relation": "Family"
+      },
+      "tags": [
+        "tribute",
+        "guestbook"
+      ],
       "likes": 25,
-      "image_url": "https://example.com/images/david-thompson.jpg",
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
       "created_at": "2025-08-18T17:30:00Z"
     }
   ]

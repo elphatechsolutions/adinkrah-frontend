@@ -1,10 +1,10 @@
 const Heading = ({
   heading,
-  size,
+  size = "lg:text-3xl xl:text-4xl",
   position = "text-left",
 }: {
   heading: string;
-  size: string;
+  size?: string;
   position?: string;
 }) => {
   return (

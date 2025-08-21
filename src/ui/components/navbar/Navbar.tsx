@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="fixed w-full bg-[#d9d9d9] top-0 z-50 p-5 bg-brand m-0 flex justify-between items-center 
+        className="fixed w-full bg-[#d9d9d9] lg:bg-white top-0 z-20 p-5 bg-brand m-0 flex justify-between items-center 
                 md:sticky md:top-0 md:bg-white md:mx-auto md:mt-10 md:w-[95%] lg:w-[80%] lg:mx-auto"
       >
         {/* Left: Hamburger + Logo small screens only */}

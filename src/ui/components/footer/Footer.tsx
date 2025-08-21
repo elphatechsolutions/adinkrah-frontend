@@ -18,8 +18,8 @@ const Footer = () => {
             <Search searchStyles="" />
           </div>
 
-          <div className="text-base md:text-2xl lg:text-2xl">
-            <h2 className="mb-2 font-bold">Social Media</h2>
+          <div className="text-base">
+            <h2 className="mb-2 font-semibold">Social Media</h2>
             <Link to={""}><FaInstagram className="inline-block mr-2" /></Link>
             <Link to={""}><FaTiktok className="inline-block mr-2" /> </Link>
             <Link to={""}><FaXTwitter className="inline-block mr-2" /></Link>
@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <h2 className="mb-2 font-bold text-base md:text-2xl lg:text-2xl">Quick Links</h2>
+          <h2 className="mb-2 font-semibold text-base">Quick Links</h2>
           <div className="flex flex-col gap-y-2">
             <Link to={"/about"}>About us</Link>
             <Link to={"/shop"}>Shop</Link>

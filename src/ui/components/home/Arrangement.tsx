@@ -8,7 +8,6 @@ const Arrangement = () => {
     >
       <Heading
         heading="Funeral Arrangements Made Simple"
-        size="lg:text-4xl xl:text-6xl md:text-4xl"
         position="lg:text-center"
       />
       <p className="text-left lg:text-center">

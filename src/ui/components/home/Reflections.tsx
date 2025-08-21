@@ -1,38 +1,42 @@
 import { Link } from "react-router-dom";
 import Heading from "./Heading";
+import LinkButton from "./LinkButton";
+import { useEffect, useState } from "react";
+import type { BlogType, BlogData } from "../../../../lib/definition";
+import Blog from "./Blog";
 
 export default function Reflections() {
+  const [blogs, setBlog] = useState<BlogData>([])
+  useEffect(() => {
+    const fetchBlog = async () => {
+      const blog = await fetch("/api/blog")
+      const data: BlogData = await blog.json()
+      setBlog(data)
+    }
+    fetchBlog()
+  }, [])
+
+  const startIndex = Math.floor(Math.random() * blogs.length);
+  const randomBlog = blogs.slice(startIndex, startIndex + 2);
   return (
     <div className="w-[95%] my-20 lg:mt-20 relative flex lg:w-full lg:flex-row md:flex-row flex-col justify-between items-center mx-auto gap-20">
 
       {/* Left Text Section */}
-      <div className="flex flex-col justify-center">
-        <Heading heading="Insights & Reflections" size="lg:text-4xl xl:text-6xl md:text-4xl"
-        />
+      <div className="flex flex-col gap-y-10 justify-center md:w-[20%] lg:w-[30%] w-[95%] mx-auto">
+        <Heading heading="Insights & Reflections" />
         <p className="text-gray-600 text-base">
           Thoughtful reflections, planning tips, and words of comfort — all here to help you feel supported.
         </p>
+        <LinkButton />
       </div>
 
       {/* Cards Section */}
-      <div className="flex flex-col md:flex-row lg:flex-row gap-5 md:w-auto grow size-full">
-        {/* Card 1 */}
-        <Link to="/posts" className="block w-full md:w-60 grow bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-          <div className="h-100 bg-[#d9d9d9] rounded-t-xl"></div>
-          <div className="p-4">
-            <h2 className="font-semibold text-lg text-gray-800">Post Title</h2>
-            <p className="text-sm text-gray-600">Short description of the post or reflection.</p>
-          </div>
-        </Link>
-
-        {/* Card 2 */}
-        <Link to="/posts" className="block w-full grow md:w-60 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-          <div className="h-100 bg-[#d9d9d9] rounded-t-xl"></div>
-          <div className="p-4">
-            <h2 className="font-semibold text-lg text-gray-800">Another Post</h2>
-            <p className="text-sm text-gray-600">Another short snippet or insight preview.</p>
-          </div>
-        </Link>
+      <div className="flex flex-col md:flex-row lg:flex-row gap-5 md:w-auto justify-between grow size-full">
+        {randomBlog.map((blog: BlogType) => (
+          <Link to={`blog${blog.id}`} key={blog.id}>
+            <Blog blog={blog} key={blog.id} />
+          </Link>
+        ))}
       </div>
     </div>
   );

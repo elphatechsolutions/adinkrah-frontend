@@ -1,86 +1,29 @@
 import { useState, useEffect } from "react";
 import Heading from "./Heading";
+import type { TestimonialData } from "../../../../lib/definition";
 
-// Define the TestimonialData interface directly in this file
-interface TestimonialData {
-  id: number;
-  quote: string;
-  author: string;
-  title: string;
-  image: string;
-}
 
 // Main App component
 export default function Testimonials() {
   // State to hold the current index of the *first* testimonial in the visible group
   const [currentIndex, setCurrentIndex] = useState(0);
   // State to manage loading status
-  const [isLoading, setIsLoading] = useState(true);
   // State to track window width for responsive logic
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const [testimonials, setTestimonials] = useState<TestimonialData>([])
 
   // Tailwind's default 'md' breakpoint is 768px.
   const mdBreakpoint = 768;
 
-  // Sample testimonial data (using the data from your latest prompt)
-  const testimonials: TestimonialData[] = [
-    {
-      id: 1,
-      quote:
-        "This service transformed our workflow! The team is incredibly responsive and the results speak for themselves. Highly recommend for any business looking to innovate.",
-      author: "Jane Doe",
-      title: "CEO, Tech Solutions Inc.",
-      image: "https://placehold.co/120x120/A78BFA/ffffff?text=JD", // Tailwind purple-400 equivalent
-    },
-    {
-      id: 2,
-      quote:
-        "An absolute game-changer. The intuitive design and powerful features have made our daily tasks much more efficient. We couldn't be happier with the outcome.",
-      author: "John Smith",
-      title: "Marketing Director, Creative Minds",
-      image: "https://placehold.co/120x120/38B2AC/ffffff?text=JS", // Tailwind teal-400 equivalent
-    },
-    {
-      id: 3,
-      quote:
-        "From concept to execution, the journey was seamless. Their expertise and dedication are evident in every detail. Truly a professional and impactful experience.",
-      author: "Emily White",
-      title: "Founder, Global Innovations",
-      image: "https://placehold.co/120x120/FBBF24/ffffff?text=EW", // Tailwind yellow-400 equivalent
-    },
-    {
-      id: 4,
-      quote:
-        "Outstanding support and an excellent product. It has significantly boosted our productivity and client satisfaction. A must-have for modern businesses.",
-      author: "Michael Brown",
-      title: "Operations Manager, Future Forward",
-      image: "https://placehold.co/120x120/60A5FA/ffffff?text=MB", // Tailwind blue-400 equivalent
-    },
-    {
-      id: 5,
-      quote:
-        "The best decision we made! Their innovative approach and dedication to quality are truly remarkable. Our business has seen significant growth.",
-      author: "Sarah Johnson",
-      title: "Product Manager, Innovate Corp.",
-      image: "https://placehold.co/120x120/EF4444/ffffff?text=SJ", // Tailwind red-500 equivalent
-    },
-    {
-      id: 6,
-      quote:
-        "Exceptional service from start to finish. They truly understand client needs and deliver beyond expectations. A highly reliable partner.",
-      author: "David Lee",
-      title: "Director of Sales, Growth Hub",
-      image: "https://placehold.co/120x120/8B5CF6/ffffff?text=DL", // Tailwind violet-500 equivalent
-    },
-  ];
-
-  // Simulate data loading
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000); // Simulate 1 second loading time
-    return () => clearTimeout(timer);
-  }, []);
+    const fetchTestimonials = async () => {
+      const fetchtestimonials = await fetch("/api/testimonials")
+      const data = await fetchtestimonials.json()
+      setTestimonials(data);
+    }
+    fetchTestimonials()
+  }, [])
 
   // Effect to handle window resize for responsive behavior
   useEffect(() => {
@@ -115,20 +58,10 @@ export default function Testimonials() {
   // If large screen, each step covers 50% width (1 testimonial), otherwise 100% (1 testimonial)
   const translateXValue = currentIndex * (isLargeScreen ? 100 / 2 : 100);
 
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
-        <div className="text-xl font-semibold text-gray-700">
-          Loading testimonials...
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="mt-10 lg:mt-30 h-auto flex items-center justify-center font-sans p-3 sm:p-4 lg:p-4">
       <div className="relative w-full lg:w-[82%] mx-auto rounded-2xl p-6 sm:p-8 md:p-10 bg-[#d9d9d9]">
-        <Heading heading="Testimonials" size="lg:text-4xl xl:text-6xl md:text-4xl" position="text-center" />
+        <Heading heading="Testimonials" position="text-center" />
         {/* Testimonial Display Area - Inner container to hold the sliding testimonials */}
         <div className="overflow-hidden rounded-lg">
           <div
@@ -143,7 +76,7 @@ export default function Testimonials() {
                 className="w-full flex-shrink-0 md:w-1/2 p-4 sm:p-6 md:p-8 text-center"
               >
                 <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 h-full flex flex-col justify-between">
-                  <p className="text-lg sm:text-xl italic text-black mb-6 leading-relaxed flex-grow">
+                  <p className="text-lg sm:text-xl text-black mb-6 leading-relaxed flex-grow">
                     "{testimonial.quote}"
                   </p>
                   <div className="flex flex-col items-center mt-4">

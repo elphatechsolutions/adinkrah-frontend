@@ -14,7 +14,6 @@ const Honor = () => {
     <HomeCard view="flex-col">
       <Heading
         heading="Honoring Every Journey with Care"
-        size="lg:text-4xl xl:text-6xl md:text-4xl"
       />
 
       <div className="flex flex-col justify-between my-10">

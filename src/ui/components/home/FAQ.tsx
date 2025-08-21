@@ -1,57 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Heading from "./Heading";
+import type { FAQData } from "../../../../lib/definition";
 
 // Define the interface for a single FAQ item
-interface FAQItem {
-  id: number;
-  question: string;
-  answer: string;
-}
 
 // Main FAQ component
 export default function FAQ() {
   // State to manage which FAQ item is currently open/expanded
+  const [faqData, setFaqData] = useState<FAQData>([])
   const [openFAQId, setOpenFAQId] = useState<number | null>(null);
 
-  // Sample FAQ data
-  const faqData: FAQItem[] = [
-    {
-      id: 1,
-      question: "How do I get started with your services?",
-      answer:
-        "Getting started is easy! Simply visit our 'Services' page, choose the plan that best fits your needs, and follow the on-screen instructions. You can also contact our sales team for a personalized consultation.",
-    },
-    {
-      id: 2,
-      question: "What payment methods do you accept?",
-      answer:
-        "We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, and bank transfers for annual subscriptions. For enterprise clients, custom invoicing options are available.",
-    },
-    {
-      id: 3,
-      question: "Can I upgrade or downgrade my plan later?",
-      answer:
-        "Absolutely! You can upgrade or downgrade your plan at any time through your account dashboard. Changes will be prorated and applied to your next billing cycle.",
-    },
-    {
-      id: 4,
-      question: "Do you offer customer support?",
-      answer:
-        "Yes, we offer 24/7 customer support via live chat, email, and phone for all our paid plans. Basic users have access to our comprehensive knowledge base and community forum.",
-    },
-    {
-      id: 5,
-      question: "What is your refund policy?",
-      answer:
-        "We offer a 30-day money-back guarantee for all new subscriptions. If you're not satisfied within the first 30 days, simply contact us for a full refund, no questions asked.",
-    },
-    {
-      id: 6,
-      question: "Is my data secure with your service?",
-      answer:
-        "Data security is our top priority. We use industry-standard encryption, regular security audits, and comply with all relevant data protection regulations (e.g., GDPR, CCPA) to ensure your data is safe and private.",
-    },
-  ];
+
+
+  useEffect(() => {
+    const fetchFaqData = async () => {
+      const fetchFaq = await fetch("/api/fag")
+      const data: FAQData = await fetchFaq.json()
+      setFaqData(data)
+    }
+
+    fetchFaqData()
+  }, [])
 
   // Function to toggle the open/closed state of an FAQ item
   const toggleFAQ = (id: number) => {
@@ -63,7 +32,7 @@ export default function FAQ() {
       className={`w-[95%] mt-10 lg:mt-30 mx-auto flex flex-col justify-center`}
     >
       <div className="w-full mx-auto lg:w-[100%] md:w-full md:mx-auto bg-white rounded-2xl">
-        <Heading heading="Frequently Asked Questions" size="lg:text-4xl xl:text-6xl md:text-4xl" position="text-center" />
+        <Heading heading="Frequently Asked Questions" position="text-center" />
 
 
         <div className="space-y-4 flex-col lg:flex-row mt-10">
@@ -115,15 +84,3 @@ export default function FAQ() {
   );
 }
 
-// CSS for the fade-in animation (can be added to a global CSS file or <style> tag if in a pure HTML file)
-// For React, Tailwind's built-in animations are preferred, but for custom effects like this, direct CSS is fine.
-// This is an example of what 'animate-fadeIn' would do:
-/*
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeIn {
-  animation: fadeIn 0.3s ease-out forwards;
-}
-*/
