@@ -2,7 +2,7 @@ import type { BlogType } from "../../../../lib/definition"
 import { formatFullDate } from "../../../../lib/utils";
 
 const Blog = ({ blog }: { blog: BlogType }) => {
-    const { title, created_at, tag, img } = blog
+    const { title, created_at, tag } = blog
     const date = formatFullDate(created_at)
     return (
         <div className="flex flex-col gap-2 grow h-auto p-5">
