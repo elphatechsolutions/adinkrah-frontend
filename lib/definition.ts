@@ -40,6 +40,11 @@ export interface FAQItem {
   answer: string;
 }
 
+export interface LinkItem {
+  label: string;
+  path: string;
+  section?: string;
+}
 
 export type SideBarLinksType = Array<{
   categories: {
@@ -139,3 +144,5 @@ export type StepsData = Steps[];
 export type CustomRoutes = Route[];
 
 export type LinkName = LinkNames[];
+
+export type LinkItemData = LinkItem[]

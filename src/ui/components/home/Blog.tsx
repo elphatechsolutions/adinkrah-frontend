@@ -5,7 +5,7 @@ const Blog = ({ blog }: { blog: BlogType }) => {
     const { title, created_at, tag } = blog
     const date = formatFullDate(created_at)
     return (
-        <div className="flex flex-col gap-2 grow h-auto p-5">
+        <div className="w-[50%] flex flex-col gap-2 grow h-auto p-5">
             <img src={"/img-placeholder.svg"} alt={title} loading="lazy" className="rounded" />
             <div className="flex items-center mt-5">
                 <span className="bg-black text-white p-0.5 rounded mr-10">{tag}</span>

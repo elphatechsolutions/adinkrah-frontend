@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import FilterLinks from "./FilterLinks";
 import Close from "../navbar/Close";
 import { IoFilter } from "react-icons/io5";
+import { SideBarLinks } from "../../../../lib/utils";
+import type { SideBarLinksType } from "../../../../lib/definition";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -12,6 +14,51 @@ interface SidebarProps {
 const FilterSideBar = ({ isOpen, onClose, variant }: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const [search, setSearch] = useState("");
+
+  // Collect all links from SideBarLinks
+  const [filters]: SideBarLinksType = SideBarLinks;
+  const allLinks: { label: string; path: string; section?: string }[] = [];
+
+  const pushLinks = (
+    section: string,
+    labels: Record<string, string>,
+    paths: Record<string, string>
+  ) => {
+    Object.entries(labels).forEach(([key, label]) => {
+      allLinks.push({
+        label,
+        path: paths[key],
+        section,
+      });
+    });
+  };
+
+  pushLinks(
+    filters.categories.name,
+    filters.categories.categoryTypes,
+    filters.categories.categoryPaths
+  );
+  pushLinks(
+    filters.prices.name,
+    filters.prices.filterPrices,
+    filters.prices.pricePaths
+  );
+  pushLinks(
+    filters.location.name,
+    filters.location.locations,
+    filters.location.locationPaths
+  );
+  pushLinks(
+    filters.religion.name,
+    filters.religion.religions,
+    filters.religion.religionPaths
+  );
+  pushLinks(
+    filters.packageType.name,
+    filters.packageType.package,
+    filters.packageType.packagePaths
+  );
+  pushLinks(filters.Vendors.name, filters.Vendors.vendors, filters.Vendors.vendorPaths);
 
   // Handle body scroll lock only on mobile
   useEffect(() => {
@@ -79,7 +126,7 @@ const FilterSideBar = ({ isOpen, onClose, variant }: SidebarProps) => {
               />
               <button type="submit">&#128269;</button>
             </form>
-            <FilterLinks search={search} />
+            <FilterLinks links={allLinks} search={search} />
           </div>
         </div>
       </>
@@ -103,7 +150,7 @@ const FilterSideBar = ({ isOpen, onClose, variant }: SidebarProps) => {
           />
           <button type="submit">&#128269;</button>
         </form>
-        <FilterLinks search={search} />
+        <FilterLinks links={allLinks} search={search} />
       </div>
     );
   }

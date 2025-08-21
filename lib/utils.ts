@@ -1,4 +1,4 @@
-import type { LinkName, SideBarLinksType, DateInput } from "./definition";
+import type { LinkName, SideBarLinksType, DateInput, LinkItemData } from "./definition";
 
 export const linkNames: LinkName = [
   { name: "Home", path: "/" },
@@ -101,6 +101,30 @@ export const SideBarLinks: SideBarLinksType = [
       },
     },
   },
+];
+
+
+export const blogSideBarLinks: LinkItemData = [
+  {
+    label: "Planning & Preparation",
+    path: "/blog/planning-preparation"
+  },
+  {
+    label: "Grief & Healing",
+    path: "/blog/grief-healing"
+  },
+  {
+    label: "Financial Guidance",
+    path: "/blog/financial-guidance"
+  },
+  {
+    label: "Stories & Reflections",
+    path: "/blog/stories-reflections"
+  },
+  {
+    label: "Faith & Spirituality",
+    path: "/blog/faith-spirituality"
+  }
 ];
 
 //edit date format for blog dates

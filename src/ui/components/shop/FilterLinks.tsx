@@ -1,43 +1,21 @@
 import { NavLink } from "react-router-dom";
-import { SideBarLinks } from "../../../../lib/utils";
-import type { SideBarLinksType } from "../../../../lib/definition";
+
+interface LinkItem {
+  label: string;
+  path: string;
+  section?: string;
+}
 
 interface FilterLinksProps {
+  links: LinkItem[];
   search: string;
 }
 
-const FilterLinks = ({ search }: FilterLinksProps) => {
-  const [filters]: SideBarLinksType = SideBarLinks;
-
-  // Collect all links from all sections
-  const allLinks: { label: string; path: string; section: string }[] = [];
-
-  // Helper to push links from a section
-  const pushLinks = (
-    section: string,
-    labels: Record<string, string>,
-    paths: Record<string, string>
-  ) => {
-    Object.entries(labels).forEach(([key, label]) => {
-      allLinks.push({
-        label,
-        path: paths[key],
-        section,
-      });
-    });
-  };
-
-  pushLinks(filters.categories.name, filters.categories.categoryTypes, filters.categories.categoryPaths);
-  pushLinks(filters.prices.name, filters.prices.filterPrices, filters.prices.pricePaths);
-  pushLinks(filters.location.name, filters.location.locations, filters.location.locationPaths);
-  pushLinks(filters.religion.name, filters.religion.religions, filters.religion.religionPaths);
-  pushLinks(filters.packageType.name, filters.packageType.package, filters.packageType.packagePaths);
-  pushLinks(filters.Vendors.name, filters.Vendors.vendors, filters.Vendors.vendorPaths);
-
+const FilterLinks = ({ links, search }: FilterLinksProps) => {
   // Filter links by search query
   const filteredLinks = search
-    ? allLinks.filter(link => link.label.toLowerCase().includes(search.toLowerCase()))
-    : allLinks;
+    ? links.filter(link => link.label.toLowerCase().includes(search.toLowerCase()))
+    : links;
 
   return (
     <aside className="overflow-y-auto text-base md:text-[12px] lg:text-lg my-10">
@@ -54,7 +32,7 @@ const FilterLinks = ({ search }: FilterLinksProps) => {
                   }`
                 }
               >
-                <span className="font-semibold">{link.section}:</span> {link.label}
+                {link.section && <span className="font-semibold">{link.section}:</span>} {link.label}
               </NavLink>
             </li>
           ))}
