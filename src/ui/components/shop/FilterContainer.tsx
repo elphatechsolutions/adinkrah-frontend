@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import type { ShopData } from "../../../../lib/definition";
 import FilterButton from "./FilterButton";
 import FilterSideBar from "./FilterSiderBar";

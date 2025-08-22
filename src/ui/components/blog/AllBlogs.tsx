@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import type { BlogData, BlogType } from "../../../../lib/definition";
+// import { useState, useEffect } from "react";
+import type { BlogType } from "../../../../lib/definition";
 import Blog from "../home/Blog";
 
 const AllBlogs = () => {

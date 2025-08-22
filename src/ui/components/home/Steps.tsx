@@ -1,7 +1,7 @@
-import type { StepsData } from "../../../../lib/definition";
+// import type { StepsData } from "../../../../lib/definition";
 import HomeCard from "./HomeCard";
 import Step from "./Step";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import StepsText from "./StepsText";
 
 const Steps = () => {

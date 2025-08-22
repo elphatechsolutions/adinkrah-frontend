@@ -1,5 +1,5 @@
 import Pagewrapper from "./Pagewrapper";
-import Faqs from "../ui/components/faq/faqs";
+import Faqs from "../ui/components/faq/Faqs";
 import CardWrapper from "../ui/components/CardWrapper";
 const FaqsPage = () => {
   return (

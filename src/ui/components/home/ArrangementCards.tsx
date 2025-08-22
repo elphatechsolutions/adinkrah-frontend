@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import ArrangementCard from "./ArrangementCard";
-import type { ArrangementData } from "../../../../lib/definition";
+// import type { ArrangementData } from "../../../../lib/definition";
 
 const ArrangementCards = () => {
   // const [arrangements, setArrangement] = useState<ArrangementData>([]);

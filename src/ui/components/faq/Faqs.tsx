@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Faq from "./Faq";
 
-const faqs = () => {
+const Faqs = () => {
   const [openFAQId, setOpenFAQId] = useState<string | null>(null);
 
   const toggleFAQ = (id: string) => {
@@ -114,4 +114,4 @@ const faqs = () => {
   );
 };
 
-export default faqs;
+export default Faqs;

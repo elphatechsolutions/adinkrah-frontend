@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Heading from "./Heading";
-import type {
-  FAQData,
-  FAQItem,
-  QuestionItem,
-} from "../../../../lib/definition";
+// import type {
+//   FAQData,
+//   FAQItem,
+//   QuestionItem,
+// } from "../../../../lib/definition";
 import Faq from "../faq/Faq";
 
 // Define the interface for a single FAQ item
