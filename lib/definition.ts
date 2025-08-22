@@ -16,7 +16,6 @@ interface LinkNames {
 // Corrected interface
 export interface Arrangement {
   img: string;
-  loading: "eager" | "lazy" | undefined;
   alt: string;
   name: string;
 }
@@ -33,14 +32,23 @@ export interface Shop {
   productName: string;
   price: number;
   quantity: number;
-  image: string;
+  img: string;
 }
 
-export interface FAQItem {
-  id: number;
+// /lib/definition.ts
+
+export interface QuestionItem {
+  id: string;
   question: string;
   answer: string;
 }
+
+export interface FAQItem {
+  id: string;
+  category: string;
+  questions: QuestionItem[];
+}
+
 
 export interface LinkItem {
   label: string;
@@ -114,23 +122,21 @@ interface Testimonial {
   image: string;
 }
 
-export interface BlogType {
-  id: number
-  title: string
-  content: string
-  tag: string
+export type BlogType = {
+  id: number;
+  title: string;
+  content: string;
   author: {
-    id: number
-    name: string
-    relation: string
-  },
-  tags: []
-  likes: number
-  img: string
-  created_at: Date
-
-}
-
+    id: number;
+    name: string;
+    relation: string;
+  };
+  tags: string[];
+  tag: string;
+  likes: number;
+  img: string;
+  created_at: string;
+};
 
 // Base interface for all contact items
 export interface Contact {

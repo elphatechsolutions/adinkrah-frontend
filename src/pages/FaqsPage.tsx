@@ -1,9 +1,12 @@
 import Pagewrapper from "./Pagewrapper";
-
+import Faqs from "../ui/components/faq/faqs";
+import CardWrapper from "../ui/components/CardWrapper";
 const FaqsPage = () => {
   return (
     <Pagewrapper>
-      <div>I am a faqs page</div>
+      <CardWrapper width="lg:w-[80%] w-[95%]">
+        <Faqs />
+      </CardWrapper>
     </Pagewrapper>
   );
 };

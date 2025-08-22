@@ -3,13 +3,13 @@ import type { Arrangement } from "../../../../lib/definition"; // Notice the imp
 
 // The component expects a single object matching the ArrangementData interface.
 const ArrangementCard = ({ data }: { data: Arrangement }) => {
-  const { img, alt, loading, name } = data;
+  const { img, alt, name } = data;
   return (
     <div className="w-full h-100 bg-[#d9d9d9] relative rounded-2xl">
       <img
         src={img}
         alt={alt}
-        loading={loading}
+        loading={"lazy"}
         className="w-full m-0 p-0 h-full rounded-2xl"
       />
       <Link

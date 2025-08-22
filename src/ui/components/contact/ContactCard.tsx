@@ -19,8 +19,8 @@ const ContactCard = ({
       <div className="w-20 h-20 bg-white flex justify-center items-center text-2xl rounded-full">
         <Icon />
       </div>
-      <h2>{label}</h2>
-      <p>{address}</p>
+      <h2 className="text-[10px] md:text-base lg:text-2xl">{label}</h2>
+      <p className="text-[12px] md:text-base ">{address}</p>
     </div>
   );
 };

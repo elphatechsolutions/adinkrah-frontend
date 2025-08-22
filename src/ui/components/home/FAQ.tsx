@@ -1,30 +1,77 @@
 import { useEffect, useState } from "react";
 import Heading from "./Heading";
-import type { FAQData } from "../../../../lib/definition";
+import type {
+  FAQData,
+  FAQItem,
+  QuestionItem,
+} from "../../../../lib/definition";
+import Faq from "../faq/Faq";
 
 // Define the interface for a single FAQ item
 
 // Main FAQ component
 export default function FAQ() {
   // State to manage which FAQ item is currently open/expanded
-  const [faqData, setFaqData] = useState<FAQData>([])
-  const [openFAQId, setOpenFAQId] = useState<number | null>(null);
+  // const [faqData, setFaqData] = useState<FAQData>([]);
+  const [openFAQId, setOpenFAQId] = useState<string | null>(null);
 
+  // useEffect(() => {
+  //   const fetchFaqData = async () => {
+  //     const fetchFaq = await fetch("/api/fag");
+  //     const data: FAQData = await fetchFaq.json();
+  //     setFaqData(data);
+  //   };
 
+  //   fetchFaqData();
+  // }, []);
 
-  useEffect(() => {
-    const fetchFaqData = async () => {
-      const fetchFaq = await fetch("/api/fag")
-      const data: FAQData = await fetchFaq.json()
-      setFaqData(data)
-    }
+  const items = [
+    {
+      id: "dkdkdkk",
+      category: "",
+      questions: [
+        {
+          id: "1",
+          question: "How do I get started with your services?",
+          answer:
+            "Getting started is easy! Simply visit our 'Services' page, choose the plan that best fits your needs, and follow the on-screen instructions. You can also contact our sales team for a personalized consultation.",
+        },
+        {
+          id: "2",
+          question: "What payment methods do you accept?",
+          answer:
+            "We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, and bank transfers for annual subscriptions. For enterprise clients, custom invoicing options are available.",
+        },
+        {
+          id: "3",
+          question: "Can I upgrade or downgrade my plan later?",
+          answer:
+            "Absolutely! You can upgrade or downgrade your plan at any time through your account dashboard. Changes will be prorated and applied to your next billing cycle.",
+        },
+        {
+          id: "4",
+          question: "Do you offer customer support?",
+          answer:
+            "Yes, we offer 24/7 customer support via live chat, email, and phone for all our paid plans. Basic users have access to our comprehensive knowledge base and community forum.",
+        },
+        {
+          id: "5",
+          question: "What is your refund policy?",
+          answer:
+            "We offer a 30-day money-back guarantee for all new subscriptions. If you're not satisfied within the first 30 days, simply contact us for a full refund, no questions asked.",
+        },
+        {
+          id: "6",
+          question: "Is my data secure with your service?",
+          answer:
+            "Data security is our top priority. We use industry-standard encryption, regular security audits, and comply with all relevant data protection regulations (e.g., GDPR, CCPA) to ensure your data is safe and private.",
+        },
+      ],
+    },
+  ];
 
-    fetchFaqData()
-  }, [])
-
-  // Function to toggle the open/closed state of an FAQ item
-  const toggleFAQ = (id: number) => {
-    setOpenFAQId(openFAQId === id ? null : id); // If already open, close it; otherwise, open it.
+  const toggleFAQ = (id: string) => {
+    setOpenFAQId(openFAQId === id ? "" : id); // If already open, close it; otherwise, open it.
   };
 
   return (
@@ -33,54 +80,16 @@ export default function FAQ() {
     >
       <div className="w-full mx-auto lg:w-[100%] md:w-full md:mx-auto bg-white rounded-2xl">
         <Heading heading="Frequently Asked Questions" position="text-center" />
-
-
-        <div className="space-y-4 flex-col lg:flex-row mt-10">
-          {faqData.map((item) => (
-            <div
-              key={item.id}
-              className="border border-gray-300 rounded-lg overflow-hidden"
-            >
-              <button
-                className="flex justify-between items-center w-full p-4 text-left bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-200"
-                onClick={() => toggleFAQ(item.id)}
-                aria-expanded={openFAQId === item.id}
-                aria-controls={`faq-answer-${item.id}`}
-              >
-                <span className="text-lg font-semibold text-gray-800">
-                  {item.question}
-                </span>
-                <svg
-                  className={`w-6 h-6 text-indigo-600 transform transition-transform duration-300 ${openFAQId === item.id ? "rotate-180" : ""
-                    }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </button>
-              {openFAQId === item.id && (
-                <div
-                  id={`faq-answer-${item.id}`}
-                  role="region"
-                  aria-labelledby={`faq-question-${item.id}`}
-                  className="p-4 bg-white text-black border-t border-gray-200 animate-fadeIn"
-                >
-                  <p>{item.answer}</p>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+        {items.map((faqItem) => (
+          <Faq
+            key={faqItem.id}
+            item={faqItem}
+            toggleFAQ={toggleFAQ}
+            openFAQId={openFAQId ?? ""}
+          />
+        ))}
+        <div className="space-y-4"></div>
       </div>
     </div>
   );
 }
-

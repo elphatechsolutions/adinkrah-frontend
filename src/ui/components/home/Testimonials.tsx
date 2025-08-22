@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Heading from "./Heading";
-import type { TestimonialData } from "../../../../lib/definition";
-
+// import type { TestimonialData } from "../../../../lib/definition";
 
 // Main App component
 export default function Testimonials() {
@@ -11,19 +10,69 @@ export default function Testimonials() {
   // State to track window width for responsive logic
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const [testimonials, setTestimonials] = useState<TestimonialData>([])
+  // const [testimonials, setTestimonials] = useState<TestimonialData>([])
 
+  const testimonials = [
+    {
+      id: 1,
+      quote:
+        "This service transformed our workflow! The team is incredibly responsive and the results speak for themselves. Highly recommend for any business looking to innovate.",
+      author: "Jane Doe",
+      title: "CEO, Tech Solutions Inc.",
+      image: "https://placehold.co/120x120/A78BFA/ffffff?text=JD",
+    },
+    {
+      id: 2,
+      quote:
+        "An absolute game-changer. The intuitive design and powerful features have made our daily tasks much more efficient. We couldn't be happier with the outcome.",
+      author: "John Smith",
+      title: "Marketing Director, Creative Minds",
+      image: "https://placehold.co/120x120/38B2AC/ffffff?text=JS",
+    },
+    {
+      id: 3,
+      quote:
+        "From concept to execution, the journey was seamless. Their expertise and dedication are evident in every detail. Truly a professional and impactful experience.",
+      author: "Emily White",
+      title: "Founder, Global Innovations",
+      image: "https://placehold.co/120x120/FBBF24/ffffff?text=EW",
+    },
+    {
+      id: 4,
+      quote:
+        "Outstanding support and an excellent product. It has significantly boosted our productivity and client satisfaction. A must-have for modern businesses.",
+      author: "Michael Brown",
+      title: "Operations Manager, Future Forward",
+      image: "https://placehold.co/120x120/60A5FA/ffffff?text=MB",
+    },
+    {
+      id: 5,
+      quote:
+        "The best decision we made! Their innovative approach and dedication to quality are truly remarkable. Our business has seen significant growth.",
+      author: "Sarah Johnson",
+      title: "Product Manager, Innovate Corp.",
+      image: "https://placehold.co/120x120/EF4444/ffffff?text=SJ",
+    },
+    {
+      id: 6,
+      quote:
+        "Exceptional service from start to finish. They truly understand client needs and deliver beyond expectations. A highly reliable partner.",
+      author: "David Lee",
+      title: "Director of Sales, Growth Hub",
+      image: "https://placehold.co/120x120/8B5CF6/ffffff?text=DL",
+    },
+  ];
   // Tailwind's default 'md' breakpoint is 768px.
   const mdBreakpoint = 768;
 
-  useEffect(() => {
-    const fetchTestimonials = async () => {
-      const fetchtestimonials = await fetch("/api/testimonials")
-      const data = await fetchtestimonials.json()
-      setTestimonials(data);
-    }
-    fetchTestimonials()
-  }, [])
+  // useEffect(() => {
+  //   const fetchTestimonials = async () => {
+  //     const fetchtestimonials = await fetch("")
+  //     const data = await fetchtestimonials.json()
+  //     setTestimonials(data.testimonials);
+  //   }
+  //   fetchTestimonials()
+  // }, [])
 
   // Effect to handle window resize for responsive behavior
   useEffect(() => {
@@ -153,10 +202,10 @@ export default function Testimonials() {
               className={`block w-3 h-3 rounded-full transition-all duration-300 ${
                 // Highlight the dot if its corresponding testimonial is visible
                 currentIndex === index ||
-                  (isLargeScreen && currentIndex + 1 === index)
+                (isLargeScreen && currentIndex + 1 === index)
                   ? "bg-indigo-600 scale-125"
                   : "bg-gray-300 hover:bg-gray-400"
-                }`}
+              }`}
               aria-label={`Go to testimonial ${index + 1}`}
             ></button>
           ))}

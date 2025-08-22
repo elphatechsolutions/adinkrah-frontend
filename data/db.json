@@ -1,0 +1,433 @@
+{
+  "steps": [
+    {
+      "id": "01",
+      "step": "Step-01",
+      "title": "Discover Your Options",
+      "description": "Begin by exploring a carefully curated range of funeral services — from traditional burials to modern memorials."
+    },
+    {
+      "id": "02",
+      "step": "Step-02",
+      "title": "Customize What Matters",
+      "description": "Select the services that reflect your loved one's wishes. You can personalize elements like venue, music, clergy, or transport."
+    },
+    {
+      "id": "03",
+      "step": "Step-03",
+      "title": "Confirm and Book Securely",
+      "description": "Book the services that best fit your needs through our secure platform. We ensure full documentation from start to finish."
+    },
+    {
+      "id": "04",
+      "step": "Step-04",
+      "title": "Let Us Coordinate the Details",
+      "description": "Once confirmed, we work closely with our trusted providers to manage every detail. You'll receive updates and guidance throughout."
+    }
+  ],
+  "arrangement": [
+    {
+      "img": "/img-placeholder1.webp",
+      "alt": "funeral services",
+      "loading": "lazy",
+      "name": "Funeral Service"
+    },
+    {
+      "img": "/img-placeholder1.webp",
+      "alt": "Flowers & Gift",
+      "loading": "lazy",
+      "name": "Flowers & Gift"
+    },
+    {
+      "img": "/img-placeholder1.webp",
+      "alt": "Hearse Services",
+      "loading": "lazy",
+      "name": "Hearse Services"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "quote": "This service transformed our workflow! The team is incredibly responsive and the results speak for themselves. Highly recommend for any business looking to innovate.",
+      "author": "Jane Doe",
+      "title": "CEO, Tech Solutions Inc.",
+      "image": "https://placehold.co/120x120/A78BFA/ffffff?text=JD"
+    },
+    {
+      "id": 2,
+      "quote": "An absolute game-changer. The intuitive design and powerful features have made our daily tasks much more efficient. We couldn't be happier with the outcome.",
+      "author": "John Smith",
+      "title": "Marketing Director, Creative Minds",
+      "image": "https://placehold.co/120x120/38B2AC/ffffff?text=JS"
+    },
+    {
+      "id": 3,
+      "quote": "From concept to execution, the journey was seamless. Their expertise and dedication are evident in every detail. Truly a professional and impactful experience.",
+      "author": "Emily White",
+      "title": "Founder, Global Innovations",
+      "image": "https://placehold.co/120x120/FBBF24/ffffff?text=EW"
+    },
+    {
+      "id": 4,
+      "quote": "Outstanding support and an excellent product. It has significantly boosted our productivity and client satisfaction. A must-have for modern businesses.",
+      "author": "Michael Brown",
+      "title": "Operations Manager, Future Forward",
+      "image": "https://placehold.co/120x120/60A5FA/ffffff?text=MB"
+    },
+    {
+      "id": 5,
+      "quote": "The best decision we made! Their innovative approach and dedication to quality are truly remarkable. Our business has seen significant growth.",
+      "author": "Sarah Johnson",
+      "title": "Product Manager, Innovate Corp.",
+      "image": "https://placehold.co/120x120/EF4444/ffffff?text=SJ"
+    },
+    {
+      "id": 6,
+      "quote": "Exceptional service from start to finish. They truly understand client needs and deliver beyond expectations. A highly reliable partner.",
+      "author": "David Lee",
+      "title": "Director of Sales, Growth Hub",
+      "image": "https://placehold.co/120x120/8B5CF6/ffffff?text=DL"
+    }
+  ],
+  "shop": [
+    {
+      "id": 1,
+      "productName": "Ashanti Kente Cloth",
+      "price": 120.0,
+      "quantity": 10,
+      "img": "../public/img-placeholder.webp"
+    },
+    {
+      "id": 2,
+      "productName": "Adinkra Symbol Shirt",
+      "price": 45.99,
+      "quantity": 25,
+      "img": "../public/img-placeholder.webp"
+    },
+    {
+      "id": 3,
+      "productName": "African Drum",
+      "price": 80.5,
+      "quantity": 5,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 4,
+      "productName": "Traditional Beaded Necklace",
+      "price": 30.0,
+      "quantity": 15,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 5,
+      "productName": "Hand-Carved Stool",
+      "price": 150.0,
+      "quantity": 3,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 6,
+      "productName": "Adinkra Wall Art",
+      "price": 70.0,
+      "quantity": 12,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 7,
+      "productName": "Fugu Shirt",
+      "price": 55.0,
+      "quantity": 20,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 8,
+      "productName": "Calabash Bowl Set",
+      "price": 35.0,
+      "quantity": 18,
+      "img": "../public/img-placeholder.webp"
+    },
+    {
+      "id": 9,
+      "productName": "Gye Nyame Pendant",
+      "price": 25.5,
+      "quantity": 40,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 10,
+      "productName": "African Print Bag",
+      "price": 60.0,
+      "quantity": 8,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 11,
+      "productName": "Cultural Fan",
+      "price": 18.0,
+      "quantity": 50,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 12,
+      "productName": "Handwoven Basket",
+      "price": 40.0,
+      "quantity": 22,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 13,
+      "productName": "Royal Headwrap",
+      "price": 28.0,
+      "quantity": 35,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 14,
+      "productName": "Ancestral Mask",
+      "price": 95.0,
+      "quantity": 7,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 15,
+      "productName": "Palm Wine Cup Set",
+      "price": 22.0,
+      "quantity": 13,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 16,
+      "productName": "Symbolic Walking Stick",
+      "price": 85.0,
+      "quantity": 4,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 17,
+      "productName": "African Leather Sandals",
+      "price": 50.0,
+      "quantity": 16,
+      "img": "/img-placeholder.webp"
+    },
+    {
+      "id": 18,
+      "productName": "Traditional Fan Drum",
+      "price": 110.0,
+      "quantity": 6,
+      "img": "/img-placeholder.webp"
+    }
+  ],
+  "faq": [
+    {
+      "id": 1,
+      "question": "How do I get started with your services?",
+      "answer": "Getting started is easy! Simply visit our 'Services' page, choose the plan that best fits your needs, and follow the on-screen instructions. You can also contact our sales team for a personalized consultation."
+    },
+    {
+      "id": 2,
+      "question": "What payment methods do you accept?",
+      "answer": "We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, and bank transfers for annual subscriptions. For enterprise clients, custom invoicing options are available."
+    },
+    {
+      "id": 3,
+      "question": "Can I upgrade or downgrade my plan later?",
+      "answer": "Absolutely! You can upgrade or downgrade your plan at any time through your account dashboard. Changes will be prorated and applied to your next billing cycle."
+    },
+    {
+      "id": 4,
+      "question": "Do you offer customer support?",
+      "answer": "Yes, we offer 24/7 customer support via live chat, email, and phone for all our paid plans. Basic users have access to our comprehensive knowledge base and community forum."
+    },
+    {
+      "id": 5,
+      "question": "What is your refund policy?",
+      "answer": "We offer a 30-day money-back guarantee for all new subscriptions. If you're not satisfied within the first 30 days, simply contact us for a full refund, no questions asked."
+    },
+    {
+      "id": 6,
+      "question": "Is my data secure with your service?",
+      "answer": "Data security is our top priority. We use industry-standard encryption, regular security audits, and comply with all relevant data protection regulations (e.g., GDPR, CCPA) to ensure your data is safe and private."
+    }
+  ],
+  "blog": [
+    {
+      "id": 1,
+      "title": "In Loving Memory of Margaret Smith",
+      "content": "We are deeply saddened to announce the passing of Margaret Smith, a beloved mother and grandmother. A memorial service will be held at Grace Church on August 20th, 2025, at 2:00 PM.",
+      "author": {
+        "id": 101,
+        "name": "Smith Family",
+        "relation": "Family"
+      },
+      "tags": [
+        "announcement",
+        "memorial"
+      ],
+      "tag": "greiving",
+      "likes": 15,
+      "img": "/img-placeholder1.webp",
+      "created_at": "2025-08-14T14:23:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Tribute to James Carter",
+      "content": "James lived a life full of love and generosity. His memory will live on through the many lives he touched. A celebration of life will take place on August 25th, 2025.",
+      "author": {
+        "id": 102,
+        "name": "Friends of James",
+        "relation": "Friends"
+      },
+      "tags": [
+        "tribute",
+        "celebration"
+      ],
+      "likes": 27,
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
+      "created_at": "2025-08-15T16:40:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Condolences for the Lee Family",
+      "content": "Our thoughts and prayers are with the Lee family as they mourn the loss of their beloved father, Daniel Lee.",
+      "author": {
+        "id": 103,
+        "name": "Community Church",
+        "relation": "Organization"
+      },
+      "tags": [
+        "condolence",
+        "community"
+      ],
+      "likes": 9,
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
+      "created_at": "2025-08-16T10:05:00Z"
+    },
+    {
+      "id": 4,
+      "title": "Celebrating the Life of Mary Johnson",
+      "content": "Mary was a kind soul who dedicated her life to helping others. A celebration of her life will be held at Riverside Hall on August 30th.",
+      "author": {
+        "id": 104,
+        "name": "Johnson Family",
+        "relation": "Family"
+      },
+      "tags": [
+        "announcement",
+        "celebration"
+      ],
+      "likes": 22,
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
+      "created_at": "2025-08-16T18:22:00Z"
+    },
+    {
+      "id": 5,
+      "title": "Memorial Gathering for Robert White",
+      "content": "Friends and family are invited to join us in remembering Robert at a gathering on September 2nd at Oakwood Cemetery.",
+      "author": {
+        "id": 105,
+        "name": "White Family",
+        "relation": "Family"
+      },
+      "tags": [
+        "memorial",
+        "announcement"
+      ],
+      "likes": 18,
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
+      "created_at": "2025-08-17T09:45:00Z"
+    },
+    {
+      "id": 6,
+      "title": "Condolence Message for the Garcia Family",
+      "content": "We extend our deepest condolences to the Garcia family during this difficult time. May their memories bring comfort and peace.",
+      "author": {
+        "id": 106,
+        "name": "Sarah Thompson",
+        "relation": "Friend"
+      },
+      "tags": [
+        "condolence"
+      ],
+      "likes": 11,
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
+      "created_at": "2025-08-17T13:20:00Z"
+    },
+    {
+      "id": 7,
+      "title": "Honoring the Life of Peter Adams",
+      "content": "Peter Adams will be remembered for his dedication to the community and his warm spirit. A memorial service will be held on September 5th.",
+      "author": {
+        "id": 107,
+        "name": "Adams Family",
+        "relation": "Family"
+      },
+      "tags": [
+        "memorial",
+        "tribute"
+      ],
+      "likes": 31,
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
+      "created_at": "2025-08-18T08:55:00Z"
+    },
+    {
+      "id": 8,
+      "title": "Sympathy for the Williams Family",
+      "content": "We are keeping the Williams family in our thoughts after the passing of their beloved mother, Grace Williams.",
+      "author": {
+        "id": 108,
+        "name": "Local Community",
+        "relation": "Community"
+      },
+      "tags": [
+        "condolence",
+        "support"
+      ],
+      "likes": 7,
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
+      "created_at": "2025-08-18T12:14:00Z"
+    },
+    {
+      "id": 9,
+      "title": "Celebrating the Memory of Helen Brown",
+      "content": "Helen will always be remembered for her laughter and kindness. A celebration of life service will be held on September 10th.",
+      "author": {
+        "id": 109,
+        "name": "Brown Family",
+        "relation": "Family"
+      },
+      "tags": [
+        "celebration",
+        "memorial"
+      ],
+      "likes": 19,
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
+      "created_at": "2025-08-18T15:45:00Z"
+    },
+    {
+      "id": 10,
+      "title": "Tribute Wall for David Thompson",
+      "content": "Friends are invited to share memories and tributes in honor of David Thompson, whose presence will be deeply missed.",
+      "author": {
+        "id": 110,
+        "name": "Thompson Family",
+        "relation": "Family"
+      },
+      "tags": [
+        "tribute",
+        "guestbook"
+      ],
+      "likes": 25,
+      "tag": "greiving",
+      "img": "/img-placeholder1.webp",
+      "created_at": "2025-08-18T17:30:00Z"
+    }
+  ]
+}
