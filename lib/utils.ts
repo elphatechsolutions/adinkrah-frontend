@@ -1,4 +1,5 @@
-import type { LinkName, SideBarLinksType, DateInput, LinkItemData } from "./definition";
+import { FaClock, FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import type { LinkName, SideBarLinksType, DateInput, LinkItemData, Contact } from "./definition";
 
 export const linkNames: LinkName = [
   { name: "Home", path: "/" },
@@ -126,6 +127,31 @@ export const blogSideBarLinks: LinkItemData = [
     path: "/blog/faith-spirituality"
   }
 ];
+
+
+export const contactInformation: Contact[] = [
+  {
+    label: "Email Us",
+    address: "adinkrahomes@gmail.com",
+    contactIcon: FaEnvelope,
+  },
+  {
+    label: "Call Us",
+    address: "+233 245 097 098",
+    contactIcon: FaPhone,
+  },
+  {
+    label: "Our Location",
+    address: "adinkrahomes@gmail.com",
+    contactIcon: FaMapMarkerAlt,
+  },
+  {
+    label: "Working Hours",
+    address: "Mon - Fri 9:00pm - 7:00pm Mon - Fri 9:00pm - 7:00pm",
+    contactIcon: FaClock,
+  },
+];
+
 
 //edit date format for blog dates
 const toDate = (input: DateInput): Date => {

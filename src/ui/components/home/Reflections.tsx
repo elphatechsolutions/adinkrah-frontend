@@ -31,7 +31,7 @@ export default function Reflections() {
       </div>
 
       {/* Cards Section */}
-      <div className="flex flex-col md:flex-row lg:flex-row gap-5 md:w-auto justify-between grow size-full">
+      <div className="w-full flex flex-col md:flex-row lg:flex-row gap-5 md:w-auto justify-between grow size-full">
         {randomBlog.map((blog: BlogType) => (
           <Link to={`blog${blog.id}`} key={blog.id}>
             <Blog blog={blog} key={blog.id} />

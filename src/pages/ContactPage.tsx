@@ -1,9 +1,13 @@
+import ContactInfo from "../ui/components/contact/ContactInfo";
+import CardWrapper from "../ui/components/CardWrapper";
 import Pagewrapper from "./Pagewrapper";
 
 const ContactPage = () => {
   return (
     <Pagewrapper>
-      <div>I am the contact Page</div>
+      <CardWrapper width="lg:w-[80%] w-[95%]">
+        <ContactInfo />
+      </CardWrapper>
     </Pagewrapper>
   );
 };

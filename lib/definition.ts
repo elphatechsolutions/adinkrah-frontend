@@ -1,3 +1,5 @@
+import type { IconType } from 'react-icons';
+
 export type DateInput = Date | string | number;
 
 interface Route {
@@ -128,6 +130,18 @@ export interface BlogType {
   created_at: Date
 
 }
+
+
+// Base interface for all contact items
+export interface Contact {
+  label: string;
+  address: string
+  contactIcon: IconType;
+}
+
+
+// A union type that represents all possible contact items
+export type ContactData = Contact[]
 
 export type TestimonialData = Testimonial[];
 

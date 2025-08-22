@@ -16,7 +16,7 @@ const AllBlogs = () => {
 
     return (
         <div className="flex flex-row w-full flex-wrap">
-            {allBlogs.map((blog: BlogType) => (<Blog blog={blog} />))}
+            {allBlogs.map((blog: BlogType) => (<Blog blog={blog} size="w-[50%]" />))}
         </div>
     )
 }

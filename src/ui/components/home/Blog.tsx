@@ -1,11 +1,11 @@
 import type { BlogType } from "../../../../lib/definition"
 import { formatFullDate } from "../../../../lib/utils";
 
-const Blog = ({ blog }: { blog: BlogType }) => {
+const Blog = ({ blog, size }: { blog: BlogType, size?: string }) => {
     const { title, created_at, tag } = blog
     const date = formatFullDate(created_at)
     return (
-        <div className="w-[50%] flex flex-col gap-2 grow h-auto p-5">
+        <div className={`${size} flex flex-col gap-2 grow h-auto p-5`}>
             <img src={"/img-placeholder.svg"} alt={title} loading="lazy" className="rounded" />
             <div className="flex items-center mt-5">
                 <span className="bg-black text-white p-0.5 rounded mr-10">{tag}</span>

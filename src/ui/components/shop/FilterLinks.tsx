@@ -14,7 +14,7 @@ interface FilterLinksProps {
 const FilterLinks = ({ links, search }: FilterLinksProps) => {
   // Filter links by search query
   const filteredLinks = search
-    ? links.filter(link => link.label.toLowerCase().includes(search.toLowerCase()))
+    ? links.filter(link => link.label.toLowerCase().includes(search.toLowerCase())) || links.filter(link => link.section?.toLowerCase().includes(search.toLowerCase()))
     : links;
 
   return (
@@ -25,6 +25,7 @@ const FilterLinks = ({ links, search }: FilterLinksProps) => {
         <ul className="flex flex-col gap-2 mb-30">
           {filteredLinks.map((link, idx) => (
             <li key={idx}>
+              <h2>{link.section}</h2>
               <NavLink
                 to={link.path}
                 className={({ isActive }) =>
@@ -32,7 +33,7 @@ const FilterLinks = ({ links, search }: FilterLinksProps) => {
                   }`
                 }
               >
-                {link.section && <span className="font-semibold">{link.section}:</span>} {link.label}
+                {link.section && <span className="font-semibold"></span>} {link.label}
               </NavLink>
             </li>
           ))}
