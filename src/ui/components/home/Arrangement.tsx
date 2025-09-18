@@ -4,7 +4,7 @@ import Heading from "./Heading";
 const Arrangement = () => {
   return (
     <div
-      className={`w-[95%] mt-10 lg:mt-30 mx-auto flex flex-col justify-center`}
+      className={`w-full lg:mt-30 p-5 mx-auto flex flex-col justify-center`}
     >
       <Heading
         heading="Funeral Arrangements Made Simple"
@@ -16,7 +16,6 @@ const Arrangement = () => {
       </p>
       <ArrangementCards />
     </div>
-
   );
 };
 

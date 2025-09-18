@@ -1,6 +1,5 @@
 import { FaRegCheckCircle } from "react-icons/fa";
 import HomeCard from "./HomeCard";
-import LinkButton from "./LinkButton";
 import Heading from "./Heading";
 
 const Honor = () => {
@@ -11,13 +10,11 @@ const Honor = () => {
   ];
 
   return (
-    <HomeCard view="flex-col">
-      <Heading
-        heading="Honoring Every Journey with Care"
-      />
+    <HomeCard view="flex-col p-2">
+      <Heading heading="Honoring Every Journey With Care" />
 
-      <div className="flex flex-col justify-between my-10">
-        <div className="w-full lg:w-[80%] md:w-[70%]">
+      <div className="flex flex-col justify-between lg:mt-10">
+        <div className="w-full lg:w-[80%] md:w-full">
           <p>
             No two lives are the same — and neither should their farewells be.
             Each life holds its own memories, milestones, and moments of joy. At
@@ -31,7 +28,7 @@ const Honor = () => {
           </p>
         </div>
 
-        <ul className="w-[80%] lg:w-full md:w-[70%] mt-5 space-y-3">
+        <ul className="w-[80%] lg:w-full md:w-[90%] mt-5 space-y-3">
           {services.map((row, rowIndex) => (
             <li key={rowIndex} className="flex justify-between">
               {row.map((item, index) => (
@@ -44,8 +41,6 @@ const Honor = () => {
           ))}
         </ul>
       </div>
-
-      <LinkButton linktext="View Products" />
     </HomeCard>
   );
 };

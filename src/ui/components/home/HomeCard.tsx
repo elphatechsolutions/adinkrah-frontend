@@ -13,9 +13,7 @@ const HomeCard = ({
   view?: string;
 }) => {
   return (
-    <div
-      className={`mt-10 ${width} ${bg} mx-auto flex ${view} justify-center`}
-    >
+    <div className={`mt-10 ${width} ${bg} mx-auto flex ${view} justify-center`}>
       {children}
     </div>
   );

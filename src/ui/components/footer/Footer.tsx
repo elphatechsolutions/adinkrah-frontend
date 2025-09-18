@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 import Search from "../navbar/Search";
-import { FaInstagram } from "react-icons/fa";
-import { CiFacebook } from "react-icons/ci";
-import { FaTiktok, FaXTwitter } from "react-icons/fa6";
+import Social from "../shop/ShopItem/Social";
 
-const Footer = () => {
+const Footer = ({ width = "w-full" }: { width?: string }) => {
   return (
-    <div className="bg-[#d9d9d9]">
-      <div className="flex flex-col justify-between md:flex-row lg:flex-row gap-y-5 p-5 lg:w-[82%] mx-auto" >
-        <h1 className="text-3xl font-semibold">AdinkraHomes</h1>
+    <div className={`bg-[#d9d9d9] ${width}`}>
+      <div className="flex flex-col justify-between md:flex-row lg:flex-row gap-y-5 p-5 lg:w-[82%] mx-auto">
+        <h1 className="text-lg font-semibold">AdinkraHomes</h1>
         <div className="flex flex-col gap-y-5">
           <div>
             <p>Be the first to know</p>
@@ -20,10 +18,7 @@ const Footer = () => {
 
           <div className="text-base">
             <h2 className="mb-2 font-semibold">Social Media</h2>
-            <Link to={""}><FaInstagram className="inline-block mr-2" /></Link>
-            <Link to={""}><FaTiktok className="inline-block mr-2" /> </Link>
-            <Link to={""}><FaXTwitter className="inline-block mr-2" /></Link>
-            <Link to={""}><CiFacebook className="inline-block mr-2" /></Link>
+            <Social />
           </div>
         </div>
         <div>

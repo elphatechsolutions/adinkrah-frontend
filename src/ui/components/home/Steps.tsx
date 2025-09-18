@@ -46,7 +46,7 @@ const Steps = () => {
   // }, []);
 
   return (
-    <HomeCard view="lg:flex-row flex-col">
+    <HomeCard view="lg:flex-row flex-col p-2">
       <StepsText />
       <div className="relative w-full grid grid-cols-1 md:grid-cols-2">
         {steps.map((step, index) => {

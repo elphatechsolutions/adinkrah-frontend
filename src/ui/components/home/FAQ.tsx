@@ -1,34 +1,14 @@
 import { useState } from "react";
 import Heading from "./Heading";
-// import type {
-//   FAQData,
-//   FAQItem,
-//   QuestionItem,
-// } from "../../../../lib/definition";
-import Faq from "../faq/Faq";
+import FaqCard from "./FaqCard";
 
-// Define the interface for a single FAQ item
-
-// Main FAQ component
+// A component for the FAQ heading
 export default function FAQ() {
-  // State to manage which FAQ item is currently open/expanded
-  // const [faqData, setFaqData] = useState<FAQData>([]);
+  // State to track which FAQ is open. null means none are open.
   const [openFAQId, setOpenFAQId] = useState<string | null>(null);
-
-  // useEffect(() => {
-  //   const fetchFaqData = async () => {
-  //     const fetchFaq = await fetch("/api/fag");
-  //     const data: FAQData = await fetchFaq.json();
-  //     setFaqData(data);
-  //   };
-
-  //   fetchFaqData();
-  // }, []);
 
   const items = [
     {
-      id: "dkdkdkk",
-      category: "",
       questions: [
         {
           id: "1",
@@ -70,25 +50,25 @@ export default function FAQ() {
     },
   ];
 
+  // This function toggles the FAQ's open state.
+  // It closes the FAQ if it's already open, and opens it otherwise.
   const toggleFAQ = (id: string) => {
-    setOpenFAQId(openFAQId === id ? "" : id); // If already open, close it; otherwise, open it.
+    setOpenFAQId(openFAQId === id ? null : id);
   };
 
   return (
-    <div
-      className={`w-[95%] mt-10 lg:mt-30 mx-auto flex flex-col justify-center`}
-    >
-      <div className="w-full mx-auto lg:w-[100%] md:w-full md:mx-auto bg-white rounded-2xl">
-        <Heading heading="Frequently Asked Questions" position="text-center" />
-        {items.map((faqItem) => (
-          <Faq
-            key={faqItem.id}
-            item={faqItem}
+    <div className="w-[95%] mt-10 lg:mt-30 mx-auto max-w-8xl p-2">
+      <Heading heading="Frequently Asked Questions" position="text-center" />
+      {/* Changed to a single-column grid to prevent horizontal shifting */}
+      <div className="grid cursor-pointer grid-cols-1 gap-6 mt-8">
+        {items[0].questions.map((question) => (
+          <FaqCard
+            key={question.id}
+            question={question}
             toggleFAQ={toggleFAQ}
-            openFAQId={openFAQId ?? ""}
+            openFAQId={openFAQId}
           />
         ))}
-        <div className="space-y-4"></div>
       </div>
     </div>
   );

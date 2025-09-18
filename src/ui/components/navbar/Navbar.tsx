@@ -4,13 +4,45 @@ import Sidebar from "./Sidebar";
 import { MdOutlineVerticalDistribute } from "react-icons/md";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
-import { linkNames } from "../../../../lib/utils";
+import { linkNames } from "../../../../lib/data";
 import Cart from "./Cart";
 import Account from "./Account";
 
-const Navbar = () => {
+const Navbar = ({
+  width = "md:w-[95%] lg:w-[70%] xl:max-w-[60%]",
+  topMargin = "md:mt-10",
+  onClick,
+}: {
+  width?: string;
+  topMargin?: string;
+  onClick: () => void;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
   const location = useLocation();
+
+  // Update cart count when cart changes
+  useEffect(() => {
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      const count = cart.reduce(
+        (total: number, item: any) => total + (item.quantity || 0),
+        0
+      );
+      setCartCount(count);
+    };
+
+    // Initial load
+    updateCartCount();
+
+    // Listen for cart updates
+    window.addEventListener("cartUpdated", updateCartCount);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("cartUpdated", updateCartCount);
+    };
+  }, []);
 
   // Close sidebar on route change
   useEffect(() => {
@@ -32,8 +64,8 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="fixed w-full bg-[#d9d9d9] lg:bg-white top-0 z-20 p-5 bg-brand m-0 flex justify-between items-center 
-                md:sticky md:top-0 md:bg-white md:mx-auto md:mt-10 md:w-[95%] lg:w-[80%] lg:mx-auto"
+        className={`relative w-full bg-[#d9d9d9] lg:bg-white top-0 z-20 p-5 bg-brand m-0 flex justify-between items-center 
+                md:top-0 md:bg-white md:mx-auto ${width} ${topMargin} lg:mx-auto`}
       >
         {/* Left: Hamburger + Logo small screens only */}
         <div className="md:hidden flex items-center">
@@ -61,8 +93,8 @@ const Navbar = () => {
         </div>
         {/* Call to action on small all screens */}
         <div className="flex items-center gap-2">
-          <Cart />
-          <Account />
+          <Cart itemsInCart={cartCount} />
+          <Account onClick={onClick} />
         </div>
       </div>
 

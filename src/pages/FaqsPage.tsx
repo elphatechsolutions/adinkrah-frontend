@@ -1,13 +1,15 @@
-import Pagewrapper from "./Pagewrapper";
 import Faqs from "../ui/components/faq/Faqs";
 import CardWrapper from "../ui/components/CardWrapper";
+import Hero from "../ui/components/Hero";
 const FaqsPage = () => {
   return (
-    <Pagewrapper>
-      <CardWrapper width="lg:w-[80%] w-[95%]">
+    <section id="faqs">
+      {/* Hero section below the navbar */}
+      <Hero page="page" />
+      <CardWrapper width="xl:w-[80%] lg:w-[95%] md:w-full w-[95%]" page="page">
         <Faqs />
       </CardWrapper>
-    </Pagewrapper>
+    </section>
   );
 };
 

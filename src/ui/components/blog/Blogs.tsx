@@ -1,38 +1,65 @@
 import { useState } from "react";
-import { blogSideBarLinks } from "../../../../lib/utils";
-import FilterLinks from "../shop/FilterLinks";
+import { allBlogs, blogSideBarLinks } from "../../../../lib/data";
 import AllBlogs from "./AllBlogs";
-import Heading from "../home/Heading";
+import Pagination from "../shop/Pagination";
+import FilterSideBar from "../shop/FilterSiderBar";
+import FilterButton from "../shop/FilterButton";
+
+const CARDS_PER_PAGE = 6;
 
 const Blogs = () => {
-    const [search, setSearch] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
-    return (
-        <div className="flex gap-x-10">
-            <aside className="w-80 p-5">
-                <form
-                    className="w-full flex justify-between border-b border-black mb-4"
-                    onSubmit={e => e.preventDefault()}
-                >
-                    <input
-                        type="text"
-                        placeholder="search blog filters"
-                        className="outline-0 border-none w-full"
-                        value={search}
-                        onChange={e => setSearch(e.target.value)}
-                    />
-                    <button type="submit">&#128269;</button>
-                </form>
-                <FilterLinks links={blogSideBarLinks} search={search} />
-            </aside>
-            <div className="w-full">
-                <Heading heading="All Blogs" position="text-center" />
-                <div className="flex flex-row grow">
-                    <AllBlogs />
-                </div>
-            </div>
+  const closeSidebar = () => setIsOpen(false);
+
+  const totalPages = Math.ceil(allBlogs.length / CARDS_PER_PAGE);
+  const startIdx = (currentPage - 1) * CARDS_PER_PAGE;
+  const endIdx = startIdx + CARDS_PER_PAGE;
+  const itemsOnPagePerPagine = allBlogs.slice(startIdx, endIdx);
+
+  return (
+    <div className="h-auto flex flex-col">
+      <FilterButton onClick={() => setIsOpen(true)} />
+
+      {/* Layout: Sidebar + Content */}
+      <div className="flex flex-1">
+        {/* Sidebar (Sticky and Scrollable)
+        <div className="hidden lg:block w-64">
+          <div className="sticky top-0 h-screen md:h-200 lg:h-200 filterSideBar overflow-y-auto">
+            <FilterSideBar
+              isOpen={true}
+              onClose={() => {}}
+              variant="desktop"
+              links={blogSideBarLinks}
+            />
+          </div>
+        </div> */}
+
+        {/* Main Content (Scrollable) */}
+        <div className="flex-1">
+          <AllBlogs allBlogs={itemsOnPagePerPagine} />
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={(page: number) => setCurrentPage(page)}
+            onPrev={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            onNext={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+          />
         </div>
-    );
-}
+      </div>
 
-export default Blogs
+      {/* Mobile Sidebar Drawer */}
+      <FilterSideBar
+        isOpen={isOpen}
+        onClose={closeSidebar}
+        links={blogSideBarLinks}
+        variant="mobile"
+      />
+    </div>
+  );
+};
+
+export default Blogs;

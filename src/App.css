@@ -4,7 +4,7 @@
 @import "tailwindcss";
 
 :root {
-  font-family: "manrope", ui-sans-serif, system-ui, sans-serif;
+  font-family: "manrope";
 }
 
 /* Example custom media query (optional) */

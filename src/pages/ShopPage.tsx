@@ -1,14 +1,16 @@
 import CardWrapper from "../ui/components/CardWrapper";
-import FilterContainer from "../ui/components/shop/FilterContainer";
-import Pagewrapper from "./Pagewrapper";
+import Hero from "../ui/components/Hero";
+import ShopContainer from "../ui/components/shop/ShopContainer";
 
 const ShopPage = () => {
   return (
-    <Pagewrapper>
-      <CardWrapper width="w-[95%]">
-        <FilterContainer />
+    <div>
+      {/* Hero section below the navbar */}
+      <Hero page="page" />
+      <CardWrapper width="lg:w-[90%] xl:w-[90%] md:w-[90%] w-[80%]" page="page">
+        <ShopContainer />
       </CardWrapper>
-    </Pagewrapper>
+    </div>
   );
 };
 

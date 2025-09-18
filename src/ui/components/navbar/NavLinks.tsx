@@ -22,17 +22,18 @@ const NavLinks = ({
           // Each link rendered as a list item
           <li key={i} className={`${spacing} text-base`}>
             {/* NavLink provides active styling based on route */}
-            <NavLink
-              to={link.path}
-              className={({ isActive }) =>
-                `relative transition-colors border-none w-full outline-none duration-200 text-base
-                ${
-                  isActive ? "text-red-500 font-bold" : `text-black font-light`
-                }`
-              }
-            >
-              {link.name}
-            </NavLink>
+            <div className="w-full">
+              <NavLink
+                to={link.path}
+                className={({ isActive }) =>
+                  `block w-full text-base transition-colors duration-200 ${
+                    isActive ? "text-red-500 font-bold" : "text-black font-light"
+                  }`
+                }
+              >
+                {link.name}
+              </NavLink>
+            </div>
           </li>
         ))}
       </ul>

@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import NavLinks from "./NavLinks";
-import { linkNames } from "../../../../lib/utils";
+import { linkNames } from "../../../../lib/data";
 import { Link } from "react-router-dom";
 import Close from "./Close";
 
@@ -10,23 +10,15 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
-  const [show, setShow] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isOpen) {
-      setShow(true); // Show immediately
-      document.body.style.overflow = "hidden"; // Disable scroll when open
-    } else {
-      // Delay hiding only enough for animation
-      const timeout = setTimeout(() => setShow(false), 400); // matches shorter duration
-      document.body.style.overflow = "unset"; // Re-enable scroll when closed
-      return () => clearTimeout(timeout);
-    }
-  
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [isOpen]);
 
-  
   useEffect(() => {
     // The handleOutsideClick function is defined here
     const handleOutsideClick = (event: MouseEvent) => {
@@ -38,7 +30,6 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
         onClose();
       }
     };
-    
 
     if (isOpen) {
       // Add a small delay before attaching the listener to avoid the race condition
@@ -60,37 +51,46 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   return (
     <>
       {/* Background overlay with smooth fade */}
-      {isOpen && (
-        <div
-          className={`fixed block inset-0 bg-[#d9d9d9] w-[80%] z-50 md:hidden h-screen transition-opacity duration-300 ease-out
-          ${isOpen ? "bg-opacity-40" : "bg-opacity-0"}`}
-          onClick={onClose}
-        />
-      )}
+      <div
+        className={`fixed inset-0 z-40 transition-all duration-500 ease-in-out ${
+          isOpen
+            ? "bg-black/50 backdrop-blur-sm pointer-events-auto"
+            : "bg-transparent pointer-events-none"
+        }`}
+        onClick={onClose}
+      />
 
-      {/* Sidebar with smooth slide animation */}
-      {show && (
-        <div
-          ref={sidebarRef}
-          className={`fixed top-0 left-0 z-50 h-screen w-4/5 p-4 transition-transform duration-300 ease-out transform
-            ${isOpen ? "translate-x-0" : "-translate-x-full"}
-            md:static md:translate-x-0 md:block`}
-        >
+      {/* Sidebar with enhanced slide animation */}
+      <div
+        ref={sidebarRef}
+        className={`fixed top-0 left-0 z-50 h-screen w-[80%] p-6 transform transition-all duration-500 ease-in-out ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } bg-[#d9d9d9] shadow-2xl overflow-y-auto filterSideBar`}
+      >
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-xl font-bold">Menu</h2>
           <Close onClose={onClose} />
+        </div>
+
+        <nav className="space-y-2">
           <NavLinks
-            spacing="px-0 py-2 font-medium text-base leading-[12px] border-b border-b-gray-400 outline-none"
+            spacing="px-0 py-3 font-medium text-gray-700"
             flexType="flex-col"
             links={linkNames}
             itemsCenter="none"
           />
+
           <Link
             to="/account/login"
-            className="px-1 p-2 w-30 mt-10 block font-medium text-base leading-[12px] rounded-md text-center border border-gray-400"
+            className="block w-full mt-6 px-4 py-2 text-center font-medium text-white bg-black rounded-lg hover:bg-gray-800 transition-colors duration-200 transform hover:scale-105"
           >
             Login
           </Link>
-        </div>
-      )}
+        </nav>
+
+        {/* Optional: Add a nice decorative element */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500" />
+      </div>
     </>
   );
 };

@@ -1,9 +1,13 @@
 import type { CustomRoutes } from "../../lib/definition";
-import HomePage from "../pages/HomePage";
-import ShopPage from "../pages/ShopPage";
-import BlogPage from "../pages/BlogPage";
-import FaqsPage from "../pages/FaqsPage";
-import ContactPage from "../pages/ContactPage";
+import { lazy } from "react";
+
+const HomePage = lazy(() => import("../pages/HomePage"))
+const ShopPage = lazy(() => import("../pages/ShopPage"))
+const BlogPage = lazy(() => import("../pages/BlogPage"))
+const FaqsPage = lazy(() => import("../pages/FaqsPage"))
+const ContactPage = lazy(() => import("../pages/ContactPage"))
+const EachBlogPage = lazy(() => import("../pages/EachBlogPage"))
+const EachProductPage = lazy(() => import("../pages/EachProductPage"))
 
 
 export const routes: CustomRoutes = [
@@ -13,6 +17,16 @@ export const routes: CustomRoutes = [
     title: "Adinkra Homes - Home",
   },
   {
+    path: "/blog/:id",
+    page: EachBlogPage,
+    title: "Adinkra Homes - Blog",
+  },
+  {
+    path: "/shop/:id",
+    page: EachProductPage,
+    title: "Adinkra Homes - Shop",
+  },
+  {
     path: "/shop",
     page: ShopPage,
     title: "Adinkra Homes - Shop",
@@ -20,7 +34,7 @@ export const routes: CustomRoutes = [
   {
     path: "/blog",
     page: BlogPage,
-    title: "Adinkra Homes - Blog",
+    title: "Adinkra Homes - Blogs",
   },
   {
     path: "/faqs",

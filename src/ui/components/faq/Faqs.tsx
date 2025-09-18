@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Faq from "./Faq";
+import FaqCard from "../home/FaqCard";
+import FaqAside from "./FaqAside";
 
 const Faqs = () => {
   const [openFAQId, setOpenFAQId] = useState<string | null>(null);
@@ -101,15 +102,36 @@ const Faqs = () => {
   ];
 
   return (
-    <div className="space-y-12">
-      {faqs.map((faqCategory) => (
-        <Faq
-          key={faqCategory.id}
-          item={faqCategory}
-          toggleFAQ={toggleFAQ}
-          openFAQId={openFAQId ?? ""}
-        />
-      ))}
+    <div className="container px-4 py-8">
+      <div className="flex flex-col lg:flex-row gap-8">
+        {/* FAQ Content */}
+        <div className="lg:w-2/3 mx-auto">
+          <div className="space-y-8">
+            {faqs.map((section) => (
+              <div key={section.id} className="space-y-4">
+                <h2 className="text-2xl font-semibold mt-5">
+                  {section.category}
+                </h2>
+                <div className="space-y-4 mb-20">
+                  {section.questions.map((faq) => (
+                    <FaqCard
+                      key={faq.id}
+                      question={faq}
+                      toggleFAQ={toggleFAQ}
+                      openFAQId={openFAQId}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="lg:w-1/3">
+          <div className="sticky top-24">
+            <FaqAside />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

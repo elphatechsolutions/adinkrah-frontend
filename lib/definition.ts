@@ -33,6 +33,14 @@ export interface Shop {
   price: number;
   quantity: number;
   img: string;
+  description?: string;
+  images?: string[];
+  reviews?: string[];
+  categories?: string[]
+  relatedProducts?: string[];
+  productDetails?: string[];
+  customization?: string[];
+
 }
 
 // /lib/definition.ts
@@ -56,65 +64,59 @@ export interface LinkItem {
   section?: string;
 }
 
-export type SideBarLinksType = Array<{
-  categories: {
-    name: string;
-    pathData: string;
-    categoryTypes: {
-      burial: string;
-      crement: string;
-      memorial: string;
-      religious: string;
-      products: string;
-    };
-    categoryPaths: Record<string, string>;
-  };
-  prices: {
-    name: string;
-    pathData: string;
-    filterPrices: Record<string, string>;
-    pricePaths: Record<string, string>;
-  };
-  location: {
-    name: string;
-    pathData: string;
-    locations: Record<string, string>;
-    locationPaths: Record<string, string>;
-  };
-  religion: {
-    name: string;
-    pathData: string;
-    religions: {
-      chrsitian: string;
-      muslim: string;
-      traditional: string;
-      secular: string;
-    };
-    religionPaths: Record<string, string>;
-  };
-  packageType: {
-    name: string;
-    pathData: string;
-    package: {
-      basic: string;
-      standard: string;
-      premium: string;
-    };
-    packagePaths: Record<string, string>;
-  };
-  Vendors: {
-    name: string;
-    pathData: string;
-    vendors: {
-      venderA: string;
-      venderB: string;
-      venderC: string;
-    };
-    vendorPaths: Record<string, string>;
-  };
-}>;
+// This is the interface for a single link within a category.
+export interface SideBarLink {
+  name: string;
+  path: string;
+}
 
-interface Testimonial {
+// This is the interface for an entire sidebar category,
+// such as "Categories" or "Prices."
+export interface SideBarData {
+  id: string;
+  name: string;
+  pathData: string;
+  links: Array<{ name: string; path: string }>;
+  categoryTypes?: {
+    [key: string]: string;
+  };
+  filterPrices?: {
+    [key: string]: string;
+  };
+  pricePaths?: {
+    [key: string]: string;
+  };
+  locations?: {
+    [key: string]: string;
+  };
+  locationPaths?: {
+    [key: string]: string;
+  };
+  religions?: {
+    [key: string]: string;
+  };
+  religionPaths?: {
+    [key: string]: string;
+  };
+  package?: {
+    [key: string]: string;
+  };
+  packagePaths?: {
+    [key: string]: string;
+  };
+  vendors?: {
+    name: string;
+    pathData: string;
+    vendorNames: {
+      [key: string]: string;
+    };
+    vendorPaths: {
+      [key: string]: string;
+    };
+  };
+}
+
+export interface TestimonialType {
   id: number;
   quote: string;
   author: string;
@@ -145,11 +147,31 @@ export interface Contact {
   contactIcon: IconType;
 }
 
+// Review interface for each prodcuts
+export interface Review {
+  id: number;
+  by: reviewBy[];
+  review: ReviewData[];
+}
+
+export interface reviewBy {
+  name: string;
+  rating: number;
+  date: string;
+}
+
+export interface ReviewData {
+  title: string;
+  comment: string;
+}
+
+export type ReviewProps = Review[];
+
 
 // A union type that represents all possible contact items
 export type ContactData = Contact[]
 
-export type TestimonialData = Testimonial[];
+export type TestimonialData = TestimonialType[];
 
 export type BlogData = BlogType[]
 
@@ -158,6 +180,11 @@ export type FAQData = FAQItem[]
 export type ShopData = Shop[];
 
 export type ArrangementData = Arrangement[];
+
+
+// This is the final interface for the complete array of sidebar data.
+export type SideBarLinksData = SideBarData[];
+
 
 export type StepsData = Steps[];
 

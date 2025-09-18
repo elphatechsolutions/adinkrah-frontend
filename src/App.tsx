@@ -4,10 +4,12 @@ import RouteWrapper from "../src/routewrapper/RouteWrapper";
 import Layout from "./layout/Layout";
 import HomePage from "./pages/HomePage";
 import { routes } from "./routes/route";
+import ScrollToTop from "./routes/ScrollToTop";
 
 function App() {
   return (
     <RouteWrapper>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />

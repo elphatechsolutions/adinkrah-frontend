@@ -35,7 +35,7 @@ const ArrangementCards = () => {
   // }, []); // ✅ Only runs once on mount
 
   return (
-    <div className="flex gap-10 flex-col w-full lg:w-full lg:flex-row mt-10">
+    <div className="flex gap-10 flex-col md:flex-row w-full lg:w-full lg:flex-row mt-10">
       {arrangements.map((data) => (
         <ArrangementCard key={data.name} data={data} />
       ))}
